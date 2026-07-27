@@ -1,0 +1,231 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ==========================================================================
+   DESIGN TOKENS — Atelier Simone Sá
+   Fonte única de verdade. O tailwind.config.ts apenas referencia estas vars.
+   ========================================================================== */
+:root {
+  /* --- Cores ------------------------------------------------------------
+     Cada cor é declarada como TRIO DE CANAIS ("R G B", sem vírgulas) porque é
+     o único formato em que o Tailwind consegue injetar alfa — sem isso,
+     `text-preto/70` e `bg-preto/50` são silenciosamente ignorados.
+     Logo abaixo, cada uma ganha sua versão pronta para uso em CSS puro.
+     ---------------------------------------------------------------------- */
+  --preto-rgb: 28 28 28; /* #1C1C1C */
+  --branco-rgb: 255 255 255; /* #FFFFFF */
+  --off-white-rgb: 249 249 249; /* #F9F9F9 */
+  /*
+    Paleta estritamente preto e branco — não há cor de acento.
+    A hierarquia vem de PESO e PREENCHIMENTO (cheio x contorno), não de matiz.
+    O cinza abaixo é o preto rebaixado, usado em rótulos e texto de apoio;
+    é o mais claro que ainda cumpre 4,5:1 sobre off-white.
+  */
+  --cinza-rgb: 105 105 105; /* #696969 — rótulos e texto secundário */
+  --borda-rgb: 216 216 216; /* #D8D8D8 */
+  --borda-sutil-rgb: 221 221 221; /* #DDDDDD */
+  --sucesso-rgb: 48 122 7; /* #307A07 */
+  --erro-rgb: 203 43 43; /* #CB2B2B */
+
+  --preto: rgb(var(--preto-rgb));
+  --branco: rgb(var(--branco-rgb));
+  --off-white: rgb(var(--off-white-rgb));
+  --cinza: rgb(var(--cinza-rgb));
+  --borda: rgb(var(--borda-rgb));
+  --borda-sutil: rgb(var(--borda-sutil-rgb));
+  --sucesso: rgb(var(--sucesso-rgb));
+  --erro: rgb(var(--erro-rgb));
+
+  /* --- Tipografia ------------------------------------------------------- */
+  --font-display: 'Cormorant Garamond', 'Times New Roman', serif;
+  --font-corpo: 'Instrument Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  /* Escala fluida: min → preferido → max */
+  --fs-h1: clamp(1.75rem, 1.35rem + 1.8vw, 2.375rem);
+  --fs-h2: clamp(1.5rem, 1.2rem + 1.4vw, 2rem);
+  --fs-h3: clamp(1.25rem, 1.05rem + 0.9vw, 1.625rem);
+  --fs-h4: clamp(1.125rem, 1rem + 0.5vw, 1.375rem);
+  --fs-h5: clamp(1rem, 0.95rem + 0.3vw, 1.125rem);
+  --fs-h6: clamp(0.8125rem, 0.78rem + 0.2vw, 0.9375rem);
+
+  --tracking-luxo: 0.18em;
+
+  /* --- Formas ----------------------------------------------------------- */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.07);
+
+  /* --- Layout ----------------------------------------------------------- */
+  --largura-conteudo: 82rem;
+  --espaco-secao: clamp(3.5rem, 2rem + 6vw, 7rem);
+
+  color-scheme: light;
+}
+
+/* ==========================================================================
+   BASE
+   ========================================================================== */
+@layer base {
+  * {
+    @apply border-borda-sutil;
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  body {
+    @apply bg-off-white font-sans text-preto antialiased;
+    font-size: 1rem;
+    line-height: 1.65;
+    font-synthesis-weight: none;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-display font-light text-preto;
+    text-wrap: balance;
+  }
+
+  h1 { @apply text-h1; }
+  h2 { @apply text-h2; }
+  h3 { @apply text-h3; }
+  h4 { @apply text-h4; }
+  h5 { @apply text-h5; }
+  h6 { @apply text-h6; }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  /* Cantos totalmente retos em controles — regra da marca. */
+  button,
+  input,
+  select,
+  textarea {
+    border-radius: 0;
+    font-family: inherit;
+  }
+
+  /* Foco visível e consistente, no acento da marca. */
+  :focus-visible {
+    outline: 1px solid var(--preto);
+    outline-offset: 3px;
+  }
+
+  ::selection {
+    background: var(--preto);
+    color: var(--branco);
+  }
+}
+
+/* ==========================================================================
+   COMPONENTES
+   ========================================================================== */
+@layer components {
+  /* --- Layout ----------------------------------------------------------- */
+  .container-luxo {
+    @apply mx-auto w-full max-w-conteudo px-6 md:px-10 lg:px-14;
+  }
+
+  .secao {
+    @apply py-secao;
+  }
+
+  /* --- Tipografia de apoio --------------------------------------------- */
+  /* Rótulo/eyebrow: o "carimbo" tipográfico da marca. */
+  .eyebrow {
+    @apply font-display text-h6 uppercase tracking-luxo text-cinza;
+  }
+
+  .titulo-secao {
+    @apply font-display text-h2 font-light uppercase tracking-luxo;
+  }
+
+  .link-menu {
+    @apply font-display text-h6 uppercase tracking-luxo text-preto
+           transition-colors duration-300 ease-suave hover:text-cinza;
+  }
+
+  /* Filete usado como divisor sob títulos. */
+  .filete {
+    @apply block h-px w-14 bg-preto;
+  }
+
+  /* Sobre fundo escuro o filete inverte. */
+  .filete-claro {
+    @apply block h-px w-14 bg-branco;
+  }
+
+  /* --- Botões ----------------------------------------------------------- */
+  .btn {
+    @apply inline-flex items-center justify-center gap-2.5 rounded-none border
+           border-transparent px-9 py-4 font-display text-h6 uppercase
+           leading-none tracking-luxo transition-all duration-300 ease-suave
+           disabled:pointer-events-none disabled:opacity-40;
+  }
+
+  /*
+    Sem cor de acento, a hierarquia dos botões vem do preenchimento:
+    preto cheio (mais forte) → branco cheio → contorno.
+    O hover inverte o preenchimento, em vez de mudar de matiz.
+  */
+  .btn-primario {
+    @apply btn border-preto bg-preto text-branco hover:bg-branco hover:text-preto;
+  }
+
+  .btn-secundario {
+    @apply btn border-preto bg-branco text-preto hover:bg-preto hover:text-branco;
+  }
+
+  .btn-contorno {
+    @apply btn border-preto bg-transparent text-preto
+           hover:bg-preto hover:text-branco;
+  }
+
+  /* Contorno para uso sobre fundo escuro. */
+  .btn-contorno-claro {
+    @apply btn border-branco bg-transparent text-branco
+           hover:bg-branco hover:text-preto;
+  }
+
+  .btn-sm {
+    @apply px-6 py-3;
+  }
+
+  /* --- Formulário ------------------------------------------------------- */
+  .input {
+    @apply w-full rounded-none border border-borda bg-branco px-4 py-3.5
+           font-sans text-base text-preto transition-colors duration-300
+           ease-suave placeholder:text-preto/40
+           focus:border-preto focus:outline-none;
+  }
+
+  .label {
+    @apply mb-2 block font-display text-h6 uppercase tracking-luxo text-preto/75;
+  }
+
+  /* --- Superfícies ------------------------------------------------------ */
+  .card {
+    @apply rounded-none border border-borda-sutil bg-branco shadow-sm;
+  }
+}

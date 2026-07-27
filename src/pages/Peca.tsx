@@ -1,0 +1,159 @@
+import { ArrowLeft } from 'lucide-react'
+import { Link, useParams } from 'react-router-dom'
+
+import BotaoWhatsapp from '../components/BotaoWhatsapp'
+import CardPeca from '../components/CardPeca'
+import GaleriaPeca from '../components/GaleriaPeca'
+import SecaoTitulo from '../components/SecaoTitulo'
+import Seo from '../components/Seo'
+import {
+  buscarPeca,
+  pecasPorCategoria,
+  rotulosCategoria,
+  type Peca as TipoPeca,
+} from '../data/pecas'
+
+/** Mensagem do WhatsApp muda conforme a peça seja sob medida ou pronta. */
+function mensagemDaPeca(peca: TipoPeca) {
+  return peca.sobMedida
+    ? `Olá! Tenho interesse na peça ${peca.nome}. Gostaria de um orçamento sob medida.`
+    : `Olá! Tenho interesse nesta peça: ${peca.nome}.`
+}
+
+export default function Peca() {
+  const { slug } = useParams<{ slug: string }>()
+  const peca = slug ? buscarPeca(slug) : undefined
+
+  if (!peca) return <PecaNaoEncontrada />
+
+  const relacionadas = pecasPorCategoria(peca.categoria)
+    .filter((outra) => outra.slug !== peca.slug)
+    .slice(0, 3)
+
+  return (
+    <>
+      <Seo
+        titulo={`${peca.nome} — ${rotulosCategoria[peca.categoria]}`}
+        descricao={peca.descricao}
+        imagem={peca.imagens[0]}
+      />
+
+      <section className="secao bg-off-white">
+        <div className="container-luxo">
+          <Link to="/catalogo" className="link-menu inline-flex items-center gap-2">
+            <ArrowLeft size={16} strokeWidth={1.5} aria-hidden />
+            Voltar ao catálogo
+          </Link>
+
+          <div className="mt-10 grid gap-12 lg:grid-cols-2 lg:gap-20">
+            {/* key: reinicia a miniatura ativa ao trocar de peça */}
+            <GaleriaPeca key={peca.slug} imagens={peca.imagens} nome={peca.nome} />
+
+            <div className="lg:pt-4">
+              <Link
+                to={`/catalogo?categoria=${peca.categoria}`}
+                className="eyebrow transition-colors duration-300 ease-suave hover:text-preto"
+              >
+                {rotulosCategoria[peca.categoria]}
+              </Link>
+
+              <h1 className="mt-4 uppercase tracking-luxo">{peca.nome}</h1>
+              <span className="filete mt-6" />
+
+              <p className="mt-8 text-preto/75">{peca.descricao}</p>
+
+              {peca.tecido && (
+                <dl className="mt-10 border-t border-borda-sutil pt-6">
+                  <dt className="font-display text-h6 uppercase tracking-luxo text-preto/65">
+                    Tecido
+                  </dt>
+                  <dd className="mt-2 capitalize text-preto">{peca.tecido}</dd>
+                </dl>
+              )}
+
+              {peca.sobMedida ? (
+                <div className="mt-10 border-l-2 border-preto bg-branco p-7">
+                  <p className="font-display text-h5 uppercase tracking-luxo text-preto">
+                    Peça sob medida
+                  </p>
+                  <p className="mt-3 text-sm leading-relaxed text-preto/70">
+                    Modelagem desenvolvida a partir das suas medidas, com provas no
+                    atelier. O valor depende do tecido e do acabamento escolhidos.
+                  </p>
+                </div>
+              ) : (
+                <div className="mt-10 border-l-2 border-preto bg-branco p-7">
+                  <p className="font-display text-h5 uppercase tracking-luxo text-preto">
+                    Pronta entrega
+                  </p>
+                  <p className="mt-3 text-sm leading-relaxed text-preto/70">
+                    Peça disponível no atelier para prova imediata, com ajustes de
+                    caimento inclusos.
+                  </p>
+                </div>
+              )}
+
+              <BotaoWhatsapp className="mt-8 w-full sm:w-auto" mensagem={mensagemDaPeca(peca)}>
+                {peca.sobMedida ? 'Solicitar orçamento' : 'Tenho interesse'}
+              </BotaoWhatsapp>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {relacionadas.length > 0 && (
+        <section className="secao bg-branco">
+          <div className="container-luxo">
+            <SecaoTitulo eyebrow="Na mesma categoria" titulo="Você também pode gostar" />
+
+            <ul className="mt-14 grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
+              {relacionadas.map((outra) => (
+                <li key={outra.slug}>
+                  <CardPeca peca={outra} />
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      )}
+    </>
+  )
+}
+
+/** Slug inexistente: mantém a URL e oferece saída, em vez de redirecionar seco. */
+function PecaNaoEncontrada() {
+  return (
+    <section className="secao bg-off-white">
+      <Seo
+        titulo="Peça não encontrada"
+        descricao="Esta peça não está mais disponível no catálogo do atelier Simone Sá."
+      />
+
+      <div className="container-luxo flex flex-col items-center py-16 text-center">
+        <span className="eyebrow">Peça não encontrada</span>
+
+        <h1 className="mt-4 uppercase tracking-luxo">
+          Esta peça saiu do catálogo
+        </h1>
+        <span className="filete mt-6" />
+
+        <p className="mt-6 max-w-md text-preto/70">
+          O endereço pode ter mudado ou a peça já não está disponível. Veja o
+          catálogo completo ou fale com o atelier sobre uma criação sob medida.
+        </p>
+
+        <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+          <Link to="/catalogo" className="btn-primario">
+            Ver o catálogo
+          </Link>
+          <BotaoWhatsapp
+            variante="contorno"
+            mensagem="Olá! Estava vendo uma peça no site e gostaria de mais informações."
+          >
+            Falar com o atelier
+          </BotaoWhatsapp>
+        </div>
+      </div>
+    </section>
+  )
+}
