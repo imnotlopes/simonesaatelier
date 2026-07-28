@@ -7,15 +7,12 @@ export const brand = {
   nome: 'Simone Sá',
   subtitulo: 'Atelier',
 
-  /** TODO: preencher com o @ real do Instagram. */
-  instagram: '@simonesa.atelier',
+  instagram: '@simonesaatelier',
 
-  /**
-   * TODO: preencher com o número real.
-   * Formato internacional, apenas dígitos: 55 + DDD + número.
-   * Ex.: 5511987654321
-   */
-  whatsapp: '5500000000000',
+  /** Formato internacional, apenas dígitos: 55 + DDD + número. */
+  whatsapp: '5531988843406',
+  /** Mesmo número, formatado para leitura. */
+  whatsappExibicao: '(31) 98884-3406',
 
   /** TODO: preencher (opcionais — deixe vazio para ocultar no rodapé). */
   cidade: '',

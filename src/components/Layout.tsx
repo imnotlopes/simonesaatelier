@@ -1,10 +1,12 @@
 import { Suspense } from 'react'
 import { Outlet } from 'react-router-dom'
 
+import Faq from './Faq'
 import FloatWhatsapp from './FloatWhatsapp'
 import Footer from './Footer'
 import Header from './Header'
 import ScrollToTop from './ScrollToTop'
+import SecaoGoogle from './SecaoGoogle'
 
 /** Reserva altura durante o carregamento do chunk, para o rodapé não saltar. */
 function Carregando() {
@@ -27,6 +29,10 @@ export default function Layout() {
         <Suspense fallback={<Carregando />}>
           <Outlet />
         </Suspense>
+
+        {/* Prova social, localização e dúvidas: fecham toda página do site. */}
+        <SecaoGoogle />
+        <Faq />
       </main>
 
       <Footer />
