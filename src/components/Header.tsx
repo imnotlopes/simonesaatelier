@@ -54,7 +54,7 @@ export default function Header() {
           />
           <span className="block">
             <span className="block whitespace-nowrap font-display text-h4 uppercase tracking-luxo-lg text-preto transition-colors duration-300 ease-suave group-hover:text-cinza">
-              {brand.nome}
+              {brand.nomeRegistrado}
             </span>
             <span className="mt-1.5 block font-display text-[0.6875rem] uppercase tracking-luxo-lg text-cinza">
               {brand.subtitulo}

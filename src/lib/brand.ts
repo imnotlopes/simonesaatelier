@@ -4,7 +4,20 @@
  * deve hardcodar número, @ ou nome do atelier.
  */
 export const brand = {
+  /**
+   * Nome corrente. Use em texto que a cliente lê como conversa —
+   * mensagens de WhatsApp, descrições, meta tags.
+   */
   nome: 'Simone Sá',
+
+  /**
+   * Nome com o símbolo de marca registrada no INPI, como aparece na logo.
+   * Use onde a marca é exibida como marca: assinatura do cabeçalho,
+   * rodapé, aviso de direitos. Fora daí, prefira `nome` — o ® no meio de
+   * uma frase de WhatsApp fica estranho.
+   */
+  nomeRegistrado: 'Simone Sá®',
+
   subtitulo: 'Atelier',
 
   instagram: '@simonesaatelier',

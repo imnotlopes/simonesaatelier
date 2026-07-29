@@ -45,7 +45,8 @@ export default function Footer() {
         </div>
 
         <p className="mt-2 text-xs tracking-wide text-branco/55">
-          © {new Date().getFullYear()} {brand.nome}. Todos os direitos reservados.
+          © {new Date().getFullYear()} {brand.nomeRegistrado}. Marca registrada no INPI.
+          Todos os direitos reservados.
         </p>
       </div>
     </footer>

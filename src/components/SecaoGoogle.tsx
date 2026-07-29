@@ -1,5 +1,4 @@
-import { MapPin, Phone, X } from 'lucide-react'
-import { useEffect, useState } from 'react'
+import { MapPin, Phone } from 'lucide-react'
 
 import { avaliacoesGoogle, googleNegocio } from '../data/google'
 import { brand } from '../lib/brand'
@@ -16,26 +15,10 @@ export default function SecaoGoogle() {
 }
 
 /* -------------------------------------------------------------------------- */
-/* Avaliações — grade de prints, ampliáveis no clique                          */
+/* Avaliações                                                                  */
 /* -------------------------------------------------------------------------- */
 
 function Avaliacoes() {
-  const [ampliada, setAmpliada] = useState<number | null>(null)
-
-  // Fechar com Escape é o reflexo esperado de quem abriu uma imagem grande.
-  useEffect(() => {
-    if (ampliada === null) return
-    const aoTeclar = (e: KeyboardEvent) => e.key === 'Escape' && setAmpliada(null)
-    window.addEventListener('keydown', aoTeclar)
-    document.body.style.overflow = 'hidden'
-    return () => {
-      window.removeEventListener('keydown', aoTeclar)
-      document.body.style.overflow = ''
-    }
-  }, [ampliada])
-
-  const temPrints = avaliacoesGoogle.length > 0
-
   return (
     <section className="secao bg-branco">
       <div className="container-luxo">
@@ -47,43 +30,49 @@ function Avaliacoes() {
 
         <div className="mt-8 flex flex-col items-center gap-3">
           <Estrelas nota={googleNegocio.nota} className="flex items-center" />
-          {googleNegocio.totalAvaliacoes > 0 && (
-            <p className="text-sm text-preto/65">
-              {googleNegocio.nota.toLocaleString('pt-BR', { minimumFractionDigits: 1 })} de 5
-              {' · '}
-              {googleNegocio.totalAvaliacoes}{' '}
-              {googleNegocio.totalAvaliacoes === 1 ? 'avaliação' : 'avaliações'}
-            </p>
-          )}
+          <p className="text-sm text-preto/65">
+            {googleNegocio.nota.toLocaleString('pt-BR', { minimumFractionDigits: 1 })} de 5
+            {' · '}
+            {googleNegocio.totalAvaliacoes}{' '}
+            {googleNegocio.totalAvaliacoes === 1 ? 'avaliação' : 'avaliações'}
+          </p>
         </div>
 
         {/*
-          Colunas de altura livre, não grade: os prints têm proporções bem
-          diferentes e, recortados para um formato único, o texto da avaliação
-          ficaria cortado — que é justamente o que interessa ler aqui.
+          Colunas de altura livre: as avaliações variam de duas linhas a
+          quinze, e numa grade de altura fixa sobraria buraco nas curtas ou
+          faltaria espaço nas longas.
         */}
-        {temPrints && (
-          <ul className="mt-14 columns-1 gap-4 sm:columns-2 lg:columns-3 xl:columns-4">
-            {avaliacoesGoogle.map((avaliacao, indice) => (
-              <li key={avaliacao.src} className="mb-4 break-inside-avoid">
-                <button
-                  type="button"
-                  onClick={() => setAmpliada(indice)}
-                  className="block w-full overflow-hidden border border-borda-sutil bg-off-white transition-colors duration-300 ease-suave hover:border-preto"
-                >
-                  <img
-                    src={avaliacao.src}
-                    alt={avaliacao.alt}
-                    loading="lazy"
-                    decoding="async"
-                    className="w-full"
-                  />
-                  <span className="sr-only">Ampliar avaliação</span>
-                </button>
-              </li>
-            ))}
-          </ul>
-        )}
+        <ul className="mt-14 columns-1 gap-6 md:columns-2 xl:columns-3">
+          {avaliacoesGoogle.map((avaliacao) => (
+            <li
+              key={avaliacao.id}
+              className="mb-6 break-inside-avoid border border-borda-sutil bg-off-white p-7 md:p-8"
+            >
+              <figure>
+                <div className="flex items-center gap-3">
+                  <Estrelas nota={avaliacao.nota} className="flex items-center" />
+                  <span className="text-sm text-preto/65">{avaliacao.quando}</span>
+                </div>
+
+                <blockquote className="mt-5">
+                  <p className="leading-relaxed text-preto/80">{avaliacao.texto}</p>
+                </blockquote>
+
+                <figcaption className="mt-6 flex flex-wrap items-baseline gap-x-3 gap-y-1">
+                  <span className="font-display text-h6 uppercase tracking-luxo text-preto">
+                    {avaliacao.autor}
+                  </span>
+                  {avaliacao.localGuide && (
+                    <span className="text-xs uppercase tracking-luxo text-preto/65">
+                      Local Guide
+                    </span>
+                  )}
+                </figcaption>
+              </figure>
+            </li>
+          ))}
+        </ul>
 
         <div className="mt-14 flex justify-center">
           <a
@@ -96,32 +85,6 @@ function Avaliacoes() {
           </a>
         </div>
       </div>
-
-      {ampliada !== null && (
-        <div
-          role="dialog"
-          aria-modal="true"
-          aria-label="Avaliação ampliada"
-          onClick={() => setAmpliada(null)}
-          className="fixed inset-0 z-50 flex items-center justify-center bg-preto/90 p-4"
-        >
-          <button
-            type="button"
-            aria-label="Fechar"
-            onClick={() => setAmpliada(null)}
-            className="absolute right-4 top-4 p-2 text-branco transition-opacity duration-300 hover:opacity-70"
-          >
-            <X size={26} strokeWidth={1.5} />
-          </button>
-
-          <img
-            src={avaliacoesGoogle[ampliada].src}
-            alt={avaliacoesGoogle[ampliada].alt}
-            onClick={(e) => e.stopPropagation()}
-            className="max-h-[88svh] w-auto max-w-full object-contain"
-          />
-        </div>
-      )}
     </section>
   )
 }
@@ -150,11 +113,9 @@ function MapaEInformacoes() {
               </h3>
               <div className="mt-3 flex items-center gap-3">
                 <Estrelas nota={googleNegocio.nota} className="flex items-center" />
-                {googleNegocio.totalAvaliacoes > 0 && (
-                  <span className="text-sm text-preto/65">
-                    ({googleNegocio.totalAvaliacoes})
-                  </span>
-                )}
+                <span className="text-sm text-preto/65">
+                  ({googleNegocio.totalAvaliacoes})
+                </span>
               </div>
             </div>
 

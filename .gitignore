@@ -34,3 +34,6 @@ imgi_*.webp
 
 # Print de referência do site, não é asset
 print-do-site.jpeg
+
+# Prints das avaliacoes; o site usa o texto transcrito em src/data/google.ts
+avaliacoes-originais/

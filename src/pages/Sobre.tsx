@@ -1,5 +1,4 @@
 import BotaoWhatsapp from '../components/BotaoWhatsapp'
-import Depoimentos from '../components/Depoimentos'
 import SecaoTitulo from '../components/SecaoTitulo'
 import Seo from '../components/Seo'
 import { brand } from '../lib/brand'
@@ -103,16 +102,6 @@ export default function Sobre() {
               </li>
             ))}
           </ol>
-        </div>
-      </section>
-
-      {/* Depoimentos */}
-      <section className="secao bg-off-white">
-        <div className="container-luxo">
-          <SecaoTitulo eyebrow="Clientes" titulo="Quem já vestiu" centralizado />
-          <div className="mt-14">
-            <Depoimentos />
-          </div>
         </div>
       </section>
 

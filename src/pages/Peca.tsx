@@ -13,11 +13,9 @@ import {
   type Peca as TipoPeca,
 } from '../data/pecas'
 
-/** Mensagem do WhatsApp muda conforme a peça seja sob medida ou pronta. */
+/** Todo o catálogo é sob medida, então a mensagem é sempre de orçamento. */
 function mensagemDaPeca(peca: TipoPeca) {
-  return peca.sobMedida
-    ? `Olá! Tenho interesse na peça ${peca.nome}. Gostaria de um orçamento sob medida.`
-    : `Olá! Tenho interesse nesta peça: ${peca.nome}.`
+  return `Olá! Tenho interesse na peça ${peca.nome}. Gostaria de um orçamento sob medida.`
 }
 
 export default function Peca() {
@@ -71,30 +69,18 @@ export default function Peca() {
                 </dl>
               )}
 
-              {peca.sobMedida ? (
-                <div className="mt-10 border-l-2 border-preto bg-branco p-7">
-                  <p className="font-display text-h5 uppercase tracking-luxo text-preto">
-                    Peça sob medida
-                  </p>
-                  <p className="mt-3 text-sm leading-relaxed text-preto/70">
-                    Modelagem desenvolvida a partir das suas medidas, com provas no
-                    atelier. O valor depende do tecido e do acabamento escolhidos.
-                  </p>
-                </div>
-              ) : (
-                <div className="mt-10 border-l-2 border-preto bg-branco p-7">
-                  <p className="font-display text-h5 uppercase tracking-luxo text-preto">
-                    Pronta entrega
-                  </p>
-                  <p className="mt-3 text-sm leading-relaxed text-preto/70">
-                    Peça disponível no atelier para prova imediata, com ajustes de
-                    caimento inclusos.
-                  </p>
-                </div>
-              )}
+              <div className="mt-10 border-l-2 border-preto bg-branco p-7">
+                <p className="font-display text-h5 uppercase tracking-luxo text-preto">
+                  Peça sob medida
+                </p>
+                <p className="mt-3 text-sm leading-relaxed text-preto/70">
+                  Modelagem desenvolvida a partir das suas medidas, com provas no
+                  atelier. O valor depende do tecido e do acabamento escolhidos.
+                </p>
+              </div>
 
               <BotaoWhatsapp className="mt-8 w-full sm:w-auto" mensagem={mensagemDaPeca(peca)}>
-                {peca.sobMedida ? 'Solicitar orçamento' : 'Tenho interesse'}
+                Solicitar orçamento
               </BotaoWhatsapp>
             </div>
           </div>

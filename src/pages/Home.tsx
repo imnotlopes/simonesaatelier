@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 
 import BotaoWhatsapp from '../components/BotaoWhatsapp'
 import CardPeca from '../components/CardPeca'
-import Depoimentos from '../components/Depoimentos'
 import SecaoTitulo from '../components/SecaoTitulo'
 import Seo from '../components/Seo'
 import { IconeInstagram } from '../components/icones'
@@ -45,7 +44,7 @@ export default function Home() {
         <div className="container-luxo relative py-24">
           <div className="max-w-xl">
             <span className="font-display text-h6 uppercase tracking-luxo-lg text-branco/70">
-              {brand.subtitulo} {brand.nome}
+              {brand.subtitulo} {brand.nomeRegistrado}
             </span>
 
             <h1 className="mt-6 font-display text-branco">Alta-costura sob medida</h1>
@@ -186,19 +185,7 @@ export default function Home() {
       </section>
 
       {/* ------------------------------------------------------------------ */}
-      {/* 5 · Depoimentos                                                     */}
-      {/* ------------------------------------------------------------------ */}
-      <section className="secao bg-off-white">
-        <div className="container-luxo">
-          <SecaoTitulo eyebrow="Clientes" titulo="Quem já vestiu" centralizado />
-          <div className="mt-14">
-            <Depoimentos />
-          </div>
-        </div>
-      </section>
-
-      {/* ------------------------------------------------------------------ */}
-      {/* 6 · Instagram                                                       */}
+      {/* 5 · Instagram                                                       */}
       {/* ------------------------------------------------------------------ */}
       <section className="secao bg-branco">
         <div className="container-luxo flex flex-col items-center text-center">

@@ -44,7 +44,7 @@ export default function Catalogo() {
         titulo={filtroAtivo ? `${rotulosCategoria[filtroAtivo]} — Catálogo` : 'Catálogo'}
         descricao={
           filtroAtivo
-            ? `Peças da categoria ${rotulosCategoria[filtroAtivo].toLowerCase()} do atelier Simone Sá, prontas para prova ou desenvolvidas sob medida.`
+            ? `Peças da categoria ${rotulosCategoria[filtroAtivo].toLowerCase()} do atelier Simone Sá, todas desenvolvidas sob medida.`
             : 'Catálogo completo do atelier Simone Sá: vestidos de noiva, festa, debutante, infantil e alfaiataria sob medida.'
         }
         imagem={listadas[0]?.imagens[0]}
@@ -54,7 +54,7 @@ export default function Catalogo() {
         <SecaoTitulo
           eyebrow="Coleção"
           titulo="Catálogo"
-          descricao="Peças prontas para prova e criações desenvolvidas sob medida."
+          descricao="Cada peça é desenvolvida sob medida, a partir de modelagem própria."
           nivel={1}
           centralizado
         />

@@ -64,15 +64,14 @@ Tudo em **`src/data/pecas.ts`**. Cada peça é um objeto no array `pecas`:
 
 ```ts
 {
-  slug: 'vestido-noiva-adele',        // vira a URL /peca/vestido-noiva-adele
-  nome: 'Adèle',
-  categoria: 'noiva',                 // noiva | festa | debutante
-                                      // infantil | sob-medida
+  slug: 'vestido-noiva-renda-francesa',  // vira a URL /peca/vestido-noiva-renda-francesa
+  nome: 'Vestido de noiva em renda francesa',
+  categoria: 'noiva',                    // noiva | festa | debutante
+                                         // infantil | sob-medida
   descricao: 'Duas ou três frases sobre a peça.',
-  tecido: 'renda francesa e tule',    // opcional
-  imagens: ['/pecas/adele-1.jpg', '/pecas/adele-2.jpg'],
-  destaque: true,                     // opcional — aparece na home
-  sobMedida: true,                    // true = orçamento · false = pronta entrega
+  tecido: 'renda francesa e tule',       // opcional
+  imagens: ['/pecas/noiva-renda-1.jpg', '/pecas/noiva-renda-2.jpg'],
+  destaque: true,                        // opcional — aparece na home
 }
 ```
 
@@ -82,12 +81,12 @@ O site se atualiza sozinho a partir desse arquivo: a home escolhe os destaques,
 a vitrine de categorias monta as capas e a contagem, e o catálogo gera os
 filtros só das categorias que têm peça.
 
-O campo `sobMedida` muda o que a cliente vê e a mensagem que chega no WhatsApp:
+Todo o catálogo é sob medida: cada peça exibe o bloco "Peça sob medida" e o
+botão manda no WhatsApp *"Olá! Tenho interesse na peça {nome}. Gostaria de um
+orçamento sob medida."*
 
-- `true` → selo "Peça sob medida" + *"Olá! Tenho interesse na peça {nome}. Gostaria de um orçamento sob medida."*
-- `false` → selo "Pronta entrega" + *"Olá! Tenho interesse nesta peça: {nome}."*
-
-Os depoimentos ficam em `src/data/depoimentos.ts`, no mesmo formato.
+Os depoimentos ficam em `src/data/depoimentos.ts` e as avaliações do Google em
+`src/data/google.ts`.
 
 ---
 

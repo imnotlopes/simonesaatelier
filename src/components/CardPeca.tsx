@@ -14,7 +14,7 @@ interface CardPecaProps {
 export default function CardPeca({ peca, prioridade = false, className }: CardPecaProps) {
   return (
     <Link to={`/peca/${peca.slug}`} className={cn('group block', className)}>
-      <div className="relative overflow-hidden bg-borda-sutil">
+      <div className="overflow-hidden bg-borda-sutil">
         <img
           src={peca.imagens[0]}
           alt={peca.nome}
@@ -22,12 +22,6 @@ export default function CardPeca({ peca, prioridade = false, className }: CardPe
           decoding="async"
           className="aspect-[3/4] w-full object-cover transition-transform duration-700 ease-suave group-hover:scale-[1.04]"
         />
-
-        {!peca.sobMedida && (
-          <span className="absolute left-0 top-0 bg-branco/95 px-3 py-2 font-display text-h6 uppercase tracking-luxo text-preto">
-            Pronta entrega
-          </span>
-        )}
       </div>
 
       <div className="pt-5">
