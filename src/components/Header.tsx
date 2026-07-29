@@ -46,7 +46,7 @@ export default function Header() {
           aria-label={`${brand.nome} — ${brand.subtitulo}, página inicial`}
         >
           <img
-            src="/logo-simbolo.png"
+            src="/logo-simbolo.webp"
             alt=""
             width={480}
             height={302}

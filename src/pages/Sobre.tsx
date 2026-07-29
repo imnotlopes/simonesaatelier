@@ -3,7 +3,7 @@ import SecaoTitulo from '../components/SecaoTitulo'
 import Seo from '../components/Seo'
 import { brand } from '../lib/brand'
 
-const IMAGEM_ATELIER = '/pecas/placeholder-06.jpg'
+const IMAGEM_ATELIER = '/pecas/placeholder-06.webp'
 
 const PROCESSO = [
   {

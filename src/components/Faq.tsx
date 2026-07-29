@@ -13,7 +13,13 @@ import { brand } from '../lib/brand'
  */
 export default function Faq() {
   return (
-    <section className="secao bg-branco">
+    /*
+      A FAQ é sempre a última seção antes do rodapé, então ela não leva
+      espaçamento embaixo: o rodapé já tem o seu (py-16/py-20). Com os dois,
+      sobravam de 75 a 131px de branco colados no rodapé preto, variando com
+      a largura da tela porque --espaco-secao é um clamp.
+    */
+    <section className="secao bg-branco pb-0">
       <div className="container-luxo">
         <SecaoTitulo eyebrow="Dúvidas" titulo="Perguntas frequentes" centralizado />
 

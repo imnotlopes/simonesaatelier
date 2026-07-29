@@ -47,29 +47,28 @@ export const casamentos: Casamento[] = [
     casal: 'Richelli e Vinicius',
     fotos: [
       {
-        src: '/casamentos/richelli-e-vinicius-1.jpg',
+        src: '/casamentos/richelli-e-vinicius-1.webp',
         alt: 'Noiva em vestido longo branco de ombro único, com rosetas de tecido aplicadas no decote.',
         formato: 'retrato',
       },
       {
-        src: '/casamentos/richelli-e-vinicius-2.jpg',
+        src: '/casamentos/richelli-e-vinicius-2.webp',
         alt: 'Noiva de vestido branco com gola alta franzida e rosetas, diante do bolo de casamento.',
         formato: 'quadrado',
       },
       {
-        src: '/casamentos/richelli-e-vinicius-3.jpg',
+        src: '/casamentos/richelli-e-vinicius-3.webp',
         alt: 'Detalhe do decote do vestido de noiva, com aplicações de tecido em relevo.',
         formato: 'retrato',
       },
     ],
   },
   {
-    /** TODO: nome do casal — a foto veio sem identificação. */
-    id: 'casamento-civil-jardim',
-    casal: '',
+    id: 'glaucia-e-augusto',
+    casal: 'Gláucia e Augusto',
     fotos: [
       {
-        src: '/casamentos/casamento-civil-jardim.jpg',
+        src: '/casamentos/glaucia-e-augusto.webp',
         alt: 'Noiva sentada em vestido branco de gola alta e cauda longa e fluida, ao lado do noivo.',
         formato: 'quadrado',
       },

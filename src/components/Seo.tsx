@@ -6,7 +6,7 @@ interface SeoProps {
   /** Omita na home para usar o título base puro. */
   titulo?: string
   descricao: string
-  /** Caminho absoluto a partir da raiz, ex.: "/pecas/placeholder-01.jpg". */
+  /** Caminho absoluto a partir da raiz, ex.: "/pecas/placeholder-01.webp". */
   imagem?: string
 }
 

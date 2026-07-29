@@ -12,7 +12,7 @@ export default function Footer() {
       <div className="container-luxo flex flex-col items-center gap-10 py-16 text-center md:py-20">
         {/* Aqui cabe o lockup completo: em ~160px o "SIMONE SÁ" ainda é legível. */}
         <img
-          src="/logo-completo-claro.png"
+          src="/logo-completo-claro.webp"
           alt={`${brand.nome} ${brand.subtitulo}`}
           width={720}
           height={636}

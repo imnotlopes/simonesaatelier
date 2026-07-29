@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 
-import { casamentos, fotosCasamentos } from '../data/casamentos'
+import { fotosCasamentos } from '../data/casamentos'
 import { cn } from '../lib/utils'
 import SecaoTitulo from './SecaoTitulo'
 
@@ -12,8 +12,6 @@ import SecaoTitulo from './SecaoTitulo'
  * formato, que é o que costuma decapitar noiva em foto de casamento.
  */
 export default function SecaoCasamentos() {
-  const quantosCasais = casamentos.length
-
   return (
     <section className="secao bg-off-white">
       <div className="container-luxo">
@@ -52,10 +50,7 @@ export default function SecaoCasamentos() {
 
         <div className="mt-14 flex flex-col items-center gap-5 text-center">
           <p className="text-preto/70">
-            {quantosCasais === 1
-              ? 'Um casamento vestido pelo atelier.'
-              : `${quantosCasais} casamentos vestidos pelo atelier.`}{' '}
-            O seu pode ser o próximo.
+            Noivas vestidas pelo atelier. O seu pode ser o próximo.
           </p>
           <Link to="/catalogo?categoria=noiva" className="btn-primario">
             Ver vestidos de noiva

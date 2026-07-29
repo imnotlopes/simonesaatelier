@@ -39,23 +39,36 @@ function Avaliacoes() {
         </div>
 
         {/*
-          Colunas de altura livre: as avaliações variam de duas linhas a
-          quinze, e numa grade de altura fixa sobraria buraco nas curtas ou
-          faltaria espaço nas longas.
+          Carrossel horizontal com scroll nativo: arrasta no touch, roda o
+          shift+scroll no desktop e o teclado navega pelos cards porque cada
+          um é focável. Sem biblioteca e sem autoplay — quem lê avaliação
+          quer controlar o próprio ritmo.
+
+          O `snap` prende cada card na borda esquerda. Os cards têm altura
+          igual (`items-stretch`) e o texto empurra o autor para o rodapé do
+          card, então avaliação curta e longa ficam alinhadas.
         */}
-        <ul className="mt-14 columns-1 gap-6 md:columns-2 xl:columns-3">
+        <ul
+          className="mt-14 flex snap-x snap-mandatory items-stretch gap-5 overflow-x-auto pb-6
+                     [scrollbar-color:rgb(var(--borda-rgb))_transparent] [scrollbar-width:thin]
+                     md:gap-6"
+          tabIndex={0}
+          role="region"
+          aria-label="Avaliações do Google, rolagem horizontal"
+        >
           {avaliacoesGoogle.map((avaliacao) => (
             <li
               key={avaliacao.id}
-              className="mb-6 break-inside-avoid border border-borda-sutil bg-off-white p-7 md:p-8"
+              className="flex w-[80vw] shrink-0 snap-start flex-col border border-borda-sutil
+                         bg-off-white p-7 sm:w-[22rem] md:p-8 lg:w-[24rem]"
             >
-              <figure>
+              <figure className="flex h-full flex-col">
                 <div className="flex items-center gap-3">
                   <Estrelas nota={avaliacao.nota} className="flex items-center" />
                   <span className="text-sm text-preto/65">{avaliacao.quando}</span>
                 </div>
 
-                <blockquote className="mt-5">
+                <blockquote className="mt-5 flex-1">
                   <p className="leading-relaxed text-preto/80">{avaliacao.texto}</p>
                 </blockquote>
 
