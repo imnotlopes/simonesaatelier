@@ -96,6 +96,72 @@ export const pecas: Peca[] = [
     imagens: ['/pecas/placeholder-11.jpg'],
   },
   {
+    slug: 'vestido-festa-corselet',
+    nome: 'Vestido de festa com corselet',
+    categoria: 'festa',
+    descricao:
+      'Corselet estruturado com barbatanas aparentes e decote coração, sobre saia ampla com fenda frontal. A cor fechada e o brilho seco do tecido sustentam a peça sem nenhum aplique. Modelagem construída sobre o corpo, prova a prova.',
+    tecido: 'zibeline',
+    imagens: ['/pecas/festa-corselet-coral.jpg'],
+    destaque: true,
+  },
+  {
+    slug: 'vestido-festa-vermelho-longo',
+    nome: 'Vestido longo vermelho',
+    categoria: 'festa',
+    descricao:
+      'Longo em crepe vermelho com decote em V, alças finas e costas abertas. A saia sai da cintura em viés, o que dá o caimento fluido sem volume. Uma peça direta, para quem não quer disputar atenção com o próprio vestido.',
+    tecido: 'crepe',
+    imagens: ['/pecas/festa-vermelho-1.webp', '/pecas/festa-vermelho-2.webp'],
+  },
+  {
+    slug: 'vestido-festa-frente-unica',
+    nome: 'Vestido frente única com cauda',
+    categoria: 'festa',
+    descricao:
+      'Frente única de gola alta, costas inteiramente abertas e saia rodada que se estende em cauda leve. Feito para foto e para movimento — o tecido acompanha o corpo sem pesar. Comprimento ajustado ao sapato escolhido.',
+    tecido: 'crepe leve',
+    imagens: ['/pecas/festa-vermelho-frente-unica.jpg'],
+  },
+  {
+    slug: 'vestido-festa-verde-com-capa',
+    nome: 'Vestido verde com capa',
+    categoria: 'festa',
+    descricao:
+      'Longo em tecido de fio metalizado, com decote V profundo, cintura marcada e fenda lateral. A capa de organza presa ao ombro, com flores de tecido aplicadas à mão, pode ser retirada na recepção. Pensado para madrinha e mãe de noivos.',
+    tecido: 'malha metalizada e organza',
+    imagens: ['/pecas/festa-verde-capa.webp'],
+    destaque: true,
+  },
+  {
+    slug: 'vestido-festa-flor-aplicada',
+    nome: 'Vestido com flor aplicada',
+    categoria: 'festa',
+    descricao:
+      'Tomara que caia com recorte vazado na cintura e flor de tecido construída à mão sobre o busto. A saia longa termina em babado único, que dá movimento sem encher a silhueta. Ideal para casamento de dia.',
+    tecido: 'crepe e organza',
+    imagens: ['/pecas/festa-verde-limao.webp'],
+  },
+  {
+    slug: 'vestido-debutante-tule',
+    nome: 'Vestido de debutante em tule',
+    categoria: 'debutante',
+    descricao:
+      'Corpete estruturado em tule sobre barbatanas aparentes, com mangas caídas e saia em camadas de babados. O tule com fio brilhante pega a luz sem parecer bordado. A saia gira — foi construída pensando na valsa.',
+    tecido: 'tule com fio brilhante',
+    imagens: ['/pecas/debutante-tule-1.jpg', '/pecas/debutante-tule-2.jpg'],
+    destaque: true,
+  },
+  {
+    slug: 'vestido-debutante-baile',
+    nome: 'Vestido de debutante de baile',
+    categoria: 'debutante',
+    descricao:
+      'Saia ampla sobre anágua estruturada, em tecido de paetê fino que cobre o vestido inteiro. As faixas na diagonal marcam a cintura e quebram o volume da saia. Cor definida junto com a debutante, a partir do tema da festa.',
+    tecido: 'paetê e tule',
+    imagens: ['/pecas/debutante-dourado.jpg'],
+  },
+  {
     slug: 'alfaiataria-sob-medida',
     nome: 'Alfaiataria sob medida',
     categoria: 'sob-medida',

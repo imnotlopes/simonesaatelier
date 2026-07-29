@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 
 import BotaoWhatsapp from '../components/BotaoWhatsapp'
 import CardPeca from '../components/CardPeca'
+import SecaoCasamentos from '../components/SecaoCasamentos'
 import SecaoTitulo from '../components/SecaoTitulo'
 import Seo from '../components/Seo'
 import { IconeInstagram } from '../components/icones'
@@ -138,7 +139,12 @@ export default function Home() {
       </section>
 
       {/* ------------------------------------------------------------------ */}
-      {/* 4 · Faixa sob medida                                                */}
+      {/* 4 · Casamentos                                                      */}
+      {/* ------------------------------------------------------------------ */}
+      <SecaoCasamentos />
+
+      {/* ------------------------------------------------------------------ */}
+      {/* 5 · Faixa sob medida                                                */}
       {/* ------------------------------------------------------------------ */}
       {/* Bloco invertido: é o pico de contraste da página, no lugar onde
           antes havia a faixa dourada. */}
@@ -185,7 +191,7 @@ export default function Home() {
       </section>
 
       {/* ------------------------------------------------------------------ */}
-      {/* 5 · Instagram                                                       */}
+      {/* 6 · Instagram                                                       */}
       {/* ------------------------------------------------------------------ */}
       <section className="secao bg-branco">
         <div className="container-luxo flex flex-col items-center text-center">
