@@ -23,9 +23,9 @@ export const brand = {
   instagram: '@simonesaatelier',
 
   /** Formato internacional, apenas dígitos: 55 + DDD + número. */
-  whatsapp: '5531988843406',
+  whatsapp: '5511999999999',
   /** Mesmo número, formatado para leitura. */
-  whatsappExibicao: '(31) 98884-3406',
+  whatsappExibicao: '(11) 99999-9999',
 
   /** TODO: preencher (opcionais — deixe vazio para ocultar no rodapé). */
   cidade: '',

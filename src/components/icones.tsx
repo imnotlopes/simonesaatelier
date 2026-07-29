@@ -30,6 +30,15 @@ export function IconeInstagram(props: SVGProps<SVGSVGElement>) {
   )
 }
 
+export function IconeYoutube(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg {...base} {...props}>
+      <rect x="2" y="5.5" width="20" height="13" rx="4" />
+      <path d="M10.2 9.4v5.2l4.5-2.6z" fill="currentColor" stroke="none" />
+    </svg>
+  )
+}
+
 export function IconeWhatsapp(props: SVGProps<SVGSVGElement>) {
   return (
     <svg {...base} {...props}>

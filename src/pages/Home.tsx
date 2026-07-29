@@ -5,6 +5,7 @@ import BotaoWhatsapp from '../components/BotaoWhatsapp'
 import CardPeca from '../components/CardPeca'
 import SecaoCasamentos from '../components/SecaoCasamentos'
 import SecaoTitulo from '../components/SecaoTitulo'
+import SecaoYoutube from '../components/SecaoYoutube'
 import Seo from '../components/Seo'
 import { IconeInstagram } from '../components/icones'
 import { categoriasVitrine, pecasDestaque } from '../data/pecas'
@@ -191,7 +192,12 @@ export default function Home() {
       </section>
 
       {/* ------------------------------------------------------------------ */}
-      {/* 6 · Instagram                                                       */}
+      {/* 6 · YouTube (some sozinha enquanto não houver vídeo cadastrado)     */}
+      {/* ------------------------------------------------------------------ */}
+      <SecaoYoutube />
+
+      {/* ------------------------------------------------------------------ */}
+      {/* 7 · Instagram                                                       */}
       {/* ------------------------------------------------------------------ */}
       <section className="secao bg-branco">
         <div className="container-luxo flex flex-col items-center text-center">
