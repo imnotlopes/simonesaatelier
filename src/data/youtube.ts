@@ -53,6 +53,10 @@ export const videos: VideoYoutube[] = [
     link: 'https://www.youtube.com/shorts/kiY2g5VdFNg',
     titulo: 'Vestido de 15 anos',
   },
+  {
+    link: 'https://www.youtube.com/shorts/L8Ull7J7_HI',
+    titulo: 'Vestido mãe e filha',
+  },
 ]
 
 /**

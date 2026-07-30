@@ -12,7 +12,7 @@ import { IconeInstagram } from '../components/icones'
 import { categoriasVitrine, pecasDestaque } from '../data/pecas'
 import { brand, linkInstagram } from '../lib/brand'
 
-const IMAGEM_HERO = '/pecas/placeholder-01.webp'
+const IMAGEM_HERO = '/pecas/isabella-minimalista-contemporaneo.webp'
 
 const PASSOS_SOB_MEDIDA = [
   { titulo: 'Conversa', texto: 'Entendemos a ocasião, o corpo e a referência que você trouxe.' },
