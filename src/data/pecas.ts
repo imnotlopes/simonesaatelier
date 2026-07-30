@@ -65,7 +65,7 @@ export const pecas: Peca[] = [
     descricao:
       'Longo em cetim duchesse com caimento fluido e fenda lateral discreta. As alças finas e o decote em V alongam a silhueta sem esforço. Uma peça de festa que não compete com quem a veste.',
     tecido: 'cetim duchesse',
-    imagens: ['/pecas/placeholder-04.webp', '/pecas/placeholder-05.webp'],
+    imagens: ['/pecas/placeholder-04.webp'],
     destaque: true,
   },
   {
@@ -121,7 +121,131 @@ export const pecas: Peca[] = [
     descricao:
       'Frente única de gola alta, costas inteiramente abertas e saia rodada que se estende em cauda leve. Feito para foto e para movimento — o tecido acompanha o corpo sem pesar. Comprimento ajustado ao sapato escolhido.',
     tecido: 'crepe leve',
-    imagens: ['/pecas/festa-vermelho-frente-unica.webp'],
+    imagens: [
+      '/pecas/festa-vermelho-frente-unica.webp',
+      '/pecas/festa-vermelho-frente-unica-2.webp',
+    ],
+  },
+  {
+    slug: 'vestido-festa-marsala-laco',
+    nome: 'Vestido marsala com laço',
+    categoria: 'festa',
+    descricao:
+      'Longo tomara que caia em ombro a ombro, com mangas bufantes e um laço construído nas costas — a peça é feita para ser vista de trás. Fenda frontal e caimento reto em zibeline, que sustenta o volume da manga sem murchar ao longo da noite.',
+    tecido: 'zibeline',
+    imagens: [
+      '/pecas/festa-marsala-1.webp',
+      '/pecas/festa-marsala-2.webp',
+      '/pecas/festa-marsala-3.webp',
+    ],
+    destaque: true,
+  },
+  {
+    slug: 'vestido-festa-pink-laco',
+    nome: 'Vestido curto com laço',
+    categoria: 'festa',
+    descricao:
+      'Curto tomara que caia com laço estruturado sobre o busto, montado à mão em cetim. O corpo justo e o comprimento acima do joelho pedem festa à noite. O laço é peça de estrutura, não aplique: mantém a forma sem barbatana aparente.',
+    tecido: 'cetim',
+    imagens: [
+      '/pecas/festa-pink-laco-1.webp',
+      '/pecas/festa-pink-laco-2.webp',
+      '/pecas/festa-pink-laco-3.webp',
+    ],
+  },
+  {
+    slug: 'vestido-festa-azul-flores-ombro',
+    nome: 'Vestido azul com flores no ombro',
+    categoria: 'festa',
+    descricao:
+      'Longo em cetim azul com gola drapeada e flores de tecido construídas uma a uma sobre o ombro. A saia reta com fenda lateral mantém a leitura sóbria, e o volume fica concentrado só no ombro. A terceira foto mostra o acabamento das flores no manequim do atelier.',
+    tecido: 'cetim',
+    imagens: [
+      '/pecas/festa-azul-flores-1.webp',
+      '/pecas/festa-azul-flores-2.webp',
+      '/pecas/festa-azul-flores-3.webp',
+    ],
+  },
+  {
+    slug: 'vestido-festa-terracota-flores',
+    nome: 'Vestido terracota com flores',
+    categoria: 'festa',
+    descricao:
+      'Longo em crepe terracota, com manga três quartos franzida, cintura marcada e flores de tecido no decote. A fenda frontal solta o passo. Pensado para mãe de noivos e madrinha, quando o traje precisa durar a cerimônia inteira sem incomodar.',
+    tecido: 'crepe',
+    imagens: ['/pecas/festa-terracota-flores.webp'],
+  },
+  {
+    slug: 'vestido-festa-gola-alta',
+    nome: 'Vestido de gola alta com recorte',
+    categoria: 'festa',
+    descricao:
+      'Frente única de gola alta com recorte em gota sobre o decote, em crepe de caimento firme. As costas ficam abertas e a saia segue reta até o chão. Um vestido de linhas fechadas na frente e aberto atrás.',
+    tecido: 'crepe',
+    imagens: ['/pecas/festa-vermelho-gola-alta.webp'],
+  },
+  {
+    slug: 'vestido-festa-franjas',
+    nome: 'Vestido curto de franjas',
+    categoria: 'festa',
+    descricao:
+      'Curto forrado, coberto por franjas de fio metalizado costuradas em fileiras. O movimento é todo do tecido — a modelagem por baixo é reta e discreta de propósito. Peça para festa à noite, aniversário e réveillon.',
+    tecido: 'franjas de fio metalizado',
+    imagens: ['/pecas/festa-franjas.webp'],
+  },
+  {
+    slug: 'vestido-festa-babados-organza',
+    nome: 'Vestido com babados em organza',
+    categoria: 'festa',
+    descricao:
+      'Sereia em cetim com decote coração, que abre da altura do joelho em camadas de babados de organza. O contraste entre o corpo liso e o volume embaixo alonga a silhueta. Comprimento e altura do babado definidos na prova.',
+    tecido: 'cetim e organza',
+    imagens: ['/pecas/festa-rosa-babados.webp'],
+  },
+  {
+    slug: 'vestido-debutante-mullet',
+    nome: 'Vestido de debutante mullet',
+    categoria: 'debutante',
+    descricao:
+      'Comprimento mullet em cetim, curto na frente e longo atrás, com franjas de strass caindo do ombro. Pensado como segundo vestido da festa: entra depois da valsa, quando a debutante quer dançar. As franjas são aplicadas uma a uma.',
+    tecido: 'cetim e strass',
+    imagens: ['/pecas/debutante-vermelho-mullet.webp'],
+  },
+  {
+    slug: 'vestido-daminha-cetim',
+    nome: 'Vestido de daminha em cetim',
+    categoria: 'infantil',
+    descricao:
+      'Corpo em cetim com manga bufante curta e saia em pregas fundas, com cós marcado na cintura. O comprimento vai até o chão, como o das madrinhas, e a saia tem corpo suficiente para armar sem anágua. Feito sob as medidas da criança.',
+    tecido: 'cetim',
+    imagens: [
+      '/pecas/infantil-daminha-cetim-1.webp',
+      '/pecas/infantil-daminha-cetim-2.webp',
+      '/pecas/infantil-daminha-cetim-3.webp',
+    ],
+    destaque: true,
+  },
+  {
+    slug: 'conjunto-infantil-jardineira',
+    nome: 'Conjunto infantil com jardineira',
+    categoria: 'infantil',
+    descricao:
+      'Jardineira de alças com vivo contrastante e camisa de gola, em algodão macio. Sem elástico apertado e sem forro grosso: a criança passa a festa inteira sem reclamar. Bordado do tema aplicado no peitilho, combinado com a família.',
+    tecido: 'algodão',
+    imagens: [
+      '/pecas/infantil-menino-jardineira-1.webp',
+      '/pecas/infantil-menino-jardineira-2.webp',
+      '/pecas/infantil-menino-jardineira-3.webp',
+    ],
+  },
+  {
+    slug: 'fraque-infantil',
+    nome: 'Fraque infantil',
+    categoria: 'infantil',
+    descricao:
+      'Fraque de gola com galão dourado aplicado à mão, calça de cetim e gravata borboleta. Feito para o tema da festa, com forro leve para a criança aguentar o dia. Corte pensado para bebê que ainda não anda firme.',
+    tecido: 'cetim e galão bordado',
+    imagens: ['/pecas/infantil-menino-fraque.webp'],
   },
   {
     slug: 'vestido-festa-verde-com-capa',
@@ -149,7 +273,11 @@ export const pecas: Peca[] = [
     descricao:
       'Corpete estruturado em tule sobre barbatanas aparentes, com mangas caídas e saia em camadas de babados. O tule com fio brilhante pega a luz sem parecer bordado. A saia gira — foi construída pensando na valsa.',
     tecido: 'tule com fio brilhante',
-    imagens: ['/pecas/debutante-tule-1.webp', '/pecas/debutante-tule-2.webp'],
+    imagens: [
+      '/pecas/debutante-tule-1.webp',
+      '/pecas/debutante-tule-2.webp',
+      '/pecas/debutante-tule-3.webp',
+    ],
     destaque: true,
   },
   {
@@ -159,7 +287,7 @@ export const pecas: Peca[] = [
     descricao:
       'Saia ampla sobre anágua estruturada, em tecido de paetê fino que cobre o vestido inteiro. As faixas na diagonal marcam a cintura e quebram o volume da saia. Cor definida junto com a debutante, a partir do tema da festa.',
     tecido: 'paetê e tule',
-    imagens: ['/pecas/debutante-dourado.webp'],
+    imagens: ['/pecas/debutante-dourado.webp', '/pecas/debutante-dourado-2.webp'],
   },
   {
     slug: 'alfaiataria-sob-medida',

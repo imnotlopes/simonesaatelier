@@ -3,7 +3,9 @@ import SecaoTitulo from '../components/SecaoTitulo'
 import Seo from '../components/Seo'
 import { brand } from '../lib/brand'
 
-const IMAGEM_ATELIER = '/pecas/placeholder-06.webp'
+/** Embalagem da marca. Antes esta página reusava a foto de uma peça do
+ *  catálogo, o que fazia a mesma imagem aparecer em dois contextos. */
+const IMAGEM_ATELIER = '/pecas/embalagem.webp'
 
 const PROCESSO = [
   {
@@ -71,7 +73,7 @@ export default function Sobre() {
           <div className="overflow-hidden bg-borda-sutil">
             <img
               src={IMAGEM_ATELIER}
-              alt="Peça em desenvolvimento no atelier"
+              alt="Sacolas brancas do atelier, com o monograma impresso e laço de fita preta."
               loading="lazy"
               decoding="async"
               className="aspect-[4/5] w-full object-cover"

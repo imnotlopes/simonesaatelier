@@ -72,6 +72,32 @@ export const casamentos: Casamento[] = [
         alt: 'Noiva sentada em vestido branco de gola alta e cauda longa e fluida, ao lado do noivo.',
         formato: 'quadrado',
       },
+      {
+        src: '/casamentos/glaucia-e-augusto-2.webp',
+        alt: 'Noiva de pé com o buquê, mostrando o corpo do vestido em gola alta e as aplicações de tecido na frente.',
+        formato: 'retrato',
+      },
+    ],
+  },
+  {
+    id: 'isabella-e-higor',
+    casal: 'Isabella e Higor',
+    fotos: [
+      {
+        src: '/casamentos/isabella-e-higor-1.webp',
+        alt: 'Noiva em vestido branco de alça fina com cauda longa espalhada no deque de madeira, ao lado do noivo.',
+        formato: 'quadrado',
+      },
+      {
+        src: '/casamentos/isabella-e-higor-3.webp',
+        alt: 'Noivos na escada da igreja; o véu comprido do vestido abre ao vento.',
+        formato: 'quadrado',
+      },
+      {
+        src: '/casamentos/isabella-e-higor-2.webp',
+        alt: 'Cerimônia na igreja vista do fundo, com a cauda do vestido estendida sobre o tapete vermelho.',
+        formato: 'quadrado',
+      },
     ],
   },
 ]
