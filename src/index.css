@@ -75,24 +75,22 @@
     scroll-behavior: smooth;
 
     /*
-      Tranca a página na largura da tela. Sem isso o site ganha uma "borda
-      infinita": o carrossel de avaliações clipa os próprios cards, mas o
-      overflow rolável dele ainda propaga para o elemento raiz, e o html
-      passa a rolar de lado (scrollWidth de ~5800px numa tela de 375px).
+      Tranca a página na largura da tela, para não existir a "borda infinita".
 
-      É `clip`, não `hidden`, de propósito: `overflow: hidden` no html
+      É `clip`, e não `hidden`, de propósito: `overflow: hidden` no html
       transforma a raiz em container de rolagem e quebra o `position: sticky`
-      do cabeçalho. `clip` corta sem criar container, então o header continua
-      grudando no topo.
+      do cabeçalho. `clip` corta sem criar container.
+
+      Isto é a segunda barreira, não a única. O Safari anterior à 16 ignora
+      `clip`, então a contenção de verdade fica na origem: cada componente que
+      rola de lado vive dentro de um invólucro com `overflow-hidden`. Ver o
+      carrossel em components/SecaoGoogle.tsx.
     */
     overflow-x: clip;
   }
 
-  /* A rolagem horizontal existe só onde é intencional — hoje, o carrossel
-     de avaliações. Qualquer coisa que passe da largura fica contida. */
   body {
     max-width: 100%;
-    overflow-x: clip;
   }
 
   @media (prefers-reduced-motion: reduce) {

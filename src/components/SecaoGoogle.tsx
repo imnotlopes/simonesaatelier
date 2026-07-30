@@ -43,8 +43,21 @@ export default function SecaoAvaliacoes() {
           igual (`items-stretch`) e o texto empurra o autor para o rodapé do
           card, então avaliação curta e longa ficam alinhadas.
         */}
+        {/*
+          Invólucro com `overflow-hidden`: é ele que impede a rolagem do
+          carrossel de virar rolagem da página inteira. Sem essa barreira, o
+          overflow do carrossel propaga até o elemento raiz e o site ganha a
+          borda infinita.
+
+          Fica aqui, e não no html ou no body, por dois motivos: `clip` na
+          raiz desloca elementos `position: fixed` (levou o botão do WhatsApp
+          para fora da tela) e o Safari anterior à 16 ignora `clip`. Um
+          `overflow-hidden` local funciona em todo navegador e não interfere
+          no sticky do cabeçalho, que está fora daqui.
+        */}
+        <div className="mt-14 max-w-full overflow-hidden">
         <ul
-          className="mt-14 flex snap-x snap-mandatory items-stretch gap-5 overflow-x-auto pb-6
+          className="flex snap-x snap-mandatory items-stretch gap-5 overflow-x-auto pb-6
                      [scrollbar-color:rgb(var(--borda-rgb))_transparent] [scrollbar-width:thin]
                      md:gap-6"
           tabIndex={0}
@@ -60,7 +73,7 @@ export default function SecaoAvaliacoes() {
                 página para fora em algumas telas. Em rem o card nunca passa
                 do container.
               */
-              className="flex w-[17rem] shrink-0 snap-start flex-col border border-borda-sutil
+              className="flex w-64 shrink-0 snap-start flex-col border border-borda-sutil
                          bg-off-white p-7 sm:w-[21rem] md:p-8 lg:w-[24rem]"
             >
               <figure className="flex h-full flex-col">
@@ -87,6 +100,7 @@ export default function SecaoAvaliacoes() {
             </li>
           ))}
         </ul>
+        </div>
 
         <div className="mt-14 flex justify-center">
           <a
