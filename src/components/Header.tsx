@@ -40,9 +40,15 @@ export default function Header() {
           do header, o "SIMONE SÁ" dela ficaria com ~5px e ilegível. Por isso
           usamos só o símbolo e compomos o nome com a tipografia do site.
         */}
+        {/*
+          `min-w-0` em vez de `shrink-0`: o nome é `whitespace-nowrap`, e num
+          aparelho bem estreito (tipo Galaxy Fold, 280px) um lockup que não
+          encolhe empurra o botão do menu para fora e a página passa a rolar
+          de lado. Assim ele cede espaço antes de estourar.
+        */}
         <NavLink
           to="/"
-          className="group flex shrink-0 items-center gap-3 leading-none sm:gap-4"
+          className="group flex min-w-0 items-center gap-3 leading-none sm:gap-4"
           aria-label={`${brand.nome} — ${brand.subtitulo}, página inicial`}
         >
           <img
@@ -52,8 +58,8 @@ export default function Header() {
             height={302}
             className="h-8 w-auto shrink-0 md:h-10"
           />
-          <span className="block">
-            <span className="block whitespace-nowrap font-display text-h4 uppercase tracking-luxo-lg text-preto transition-colors duration-300 ease-suave group-hover:text-cinza">
+          <span className="block min-w-0">
+            <span className="block truncate font-display text-h4 uppercase tracking-luxo-lg text-preto transition-colors duration-300 ease-suave group-hover:text-cinza">
               {brand.nomeRegistrado}
             </span>
             <span className="mt-1.5 block font-display text-[0.6875rem] uppercase tracking-luxo-lg text-cinza">

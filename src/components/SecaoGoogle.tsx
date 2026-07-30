@@ -59,8 +59,14 @@ function Avaliacoes() {
           {avaliacoesGoogle.map((avaliacao) => (
             <li
               key={avaliacao.id}
-              className="flex w-[80vw] shrink-0 snap-start flex-col border border-borda-sutil
-                         bg-off-white p-7 sm:w-[22rem] md:p-8 lg:w-[24rem]"
+              /*
+                Largura em rem, não em vw: `vw` conta a barra de rolagem
+                vertical, então 80vw é mais largo que a área útil e empurra a
+                página para fora em algumas telas. Em rem o card nunca passa
+                do container.
+              */
+              className="flex w-[17rem] shrink-0 snap-start flex-col border border-borda-sutil
+                         bg-off-white p-7 sm:w-[21rem] md:p-8 lg:w-[24rem]"
             >
               <figure className="flex h-full flex-col">
                 <div className="flex items-center gap-3">
