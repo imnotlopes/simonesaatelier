@@ -23,3 +23,19 @@ createRoot(document.getElementById('root')!).render(
     </BrowserRouter>
   </StrictMode>,
 )
+
+/**
+ * Diagnóstico de rolagem lateral, ligado por `?overflow` na URL.
+ *
+ * Existe porque o problema aparece no aparelho da cliente e não se reproduz
+ * em teste aqui. Com o parâmetro, um painel mostra na própria tela quais
+ * elementos passam da largura.
+ *
+ * O import é dinâmico de propósito: vira um chunk separado e não é baixado
+ * por quem visita o site normalmente.
+ */
+if (new URLSearchParams(location.search).has('overflow')) {
+  import('./lib/diagnosticoOverflow')
+    .then(({ diagnosticarOverflow }) => setTimeout(diagnosticarOverflow, 1500))
+    .catch(() => {})
+}

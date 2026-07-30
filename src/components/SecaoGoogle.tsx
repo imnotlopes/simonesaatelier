@@ -210,15 +210,25 @@ export function SecaoMapa() {
             </a>
           </div>
 
-          {/* Mapa */}
-          <div className="min-h-[320px] bg-branco lg:min-h-[460px]">
+          {/*
+            Mapa.
+
+            O invólucro leva `overflow-hidden` e o iframe vai com
+            `w-px min-w-full` (largura de 1px, mínimo de 100%) em vez de
+            `w-full`. Não é firula: o Safari do iOS ignora largura percentual
+            em iframe e dimensiona o elemento pelo conteúdo, que aqui é um
+            mapa bem mais largo que a tela. Sem essas duas travas, o iframe
+            estoura a célula do grid e arrasta a página inteira de lado, o
+            que só acontece no iPhone e não aparece em teste no desktop.
+          */}
+          <div className="min-h-[320px] overflow-hidden bg-branco lg:min-h-[460px]">
             <iframe
               src={googleNegocio.mapaEmbed}
               title={`Mapa com a localização do ${googleNegocio.nome}`}
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
               allowFullScreen
-              className="size-full min-h-[320px] border-0 grayscale lg:min-h-[460px]"
+              className="h-full min-h-[320px] w-px min-w-full border-0 grayscale lg:min-h-[460px]"
             />
           </div>
         </div>

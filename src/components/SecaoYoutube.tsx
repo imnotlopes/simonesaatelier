@@ -81,7 +81,9 @@ function CardVideo({ id, titulo }: { id: string; titulo: string }) {
           title={titulo}
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
-          className="size-full border-0"
+          /* `w-px min-w-full` pelo mesmo motivo do mapa: o Safari do iOS
+             ignora largura percentual em iframe e dimensiona pelo conteúdo. */
+          className="h-full w-px min-w-full border-0"
         />
       </div>
     )
