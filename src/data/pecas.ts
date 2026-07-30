@@ -119,7 +119,7 @@ export const pecas: Peca[] = [
     nome: 'Vestido frente única com cauda',
     categoria: 'festa',
     descricao:
-      'Frente única de gola alta, costas inteiramente abertas e saia rodada que se estende em cauda leve. Feito para foto e para movimento — o tecido acompanha o corpo sem pesar. Comprimento ajustado ao sapato escolhido.',
+      'Frente única de gola alta, costas inteiramente abertas e saia rodada que se estende em cauda leve. Feito para foto e para movimento: o tecido acompanha o corpo sem pesar. Comprimento ajustado ao sapato escolhido.',
     tecido: 'crepe leve',
     imagens: [
       '/pecas/festa-vermelho-frente-unica.webp',
@@ -131,7 +131,7 @@ export const pecas: Peca[] = [
     nome: 'Vestido marsala com laço',
     categoria: 'festa',
     descricao:
-      'Longo tomara que caia em ombro a ombro, com mangas bufantes e um laço construído nas costas — a peça é feita para ser vista de trás. Fenda frontal e caimento reto em zibeline, que sustenta o volume da manga sem murchar ao longo da noite.',
+      'Longo tomara que caia em ombro a ombro, com mangas bufantes e um laço construído nas costas. A peça é feita para ser vista de trás. Fenda frontal e caimento reto em zibeline, que sustenta o volume da manga sem murchar ao longo da noite.',
     tecido: 'zibeline',
     imagens: [
       '/pecas/festa-marsala-1.webp',
@@ -189,7 +189,7 @@ export const pecas: Peca[] = [
     nome: 'Vestido curto de franjas',
     categoria: 'festa',
     descricao:
-      'Curto forrado, coberto por franjas de fio metalizado costuradas em fileiras. O movimento é todo do tecido — a modelagem por baixo é reta e discreta de propósito. Peça para festa à noite, aniversário e réveillon.',
+      'Curto forrado, coberto por franjas de fio metalizado costuradas em fileiras. O movimento é todo do tecido: a modelagem por baixo é reta e discreta de propósito. Peça para festa à noite, aniversário e réveillon.',
     tecido: 'franjas de fio metalizado',
     imagens: ['/pecas/festa-franjas.webp'],
   },
@@ -271,7 +271,7 @@ export const pecas: Peca[] = [
     nome: 'Vestido de debutante em tule',
     categoria: 'debutante',
     descricao:
-      'Corpete estruturado em tule sobre barbatanas aparentes, com mangas caídas e saia em camadas de babados. O tule com fio brilhante pega a luz sem parecer bordado. A saia gira — foi construída pensando na valsa.',
+      'Corpete estruturado em tule sobre barbatanas aparentes, com mangas caídas e saia em camadas de babados. O tule com fio brilhante pega a luz sem parecer bordado. A saia gira, porque foi construída pensando na valsa.',
     tecido: 'tule com fio brilhante',
     imagens: [
       '/pecas/debutante-tule-1.webp',

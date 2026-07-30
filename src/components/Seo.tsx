@@ -22,7 +22,7 @@ interface SeoProps {
 export default function Seo({ titulo, descricao, imagem = '/og-image.jpg' }: SeoProps) {
   const { pathname } = useLocation()
 
-  const tituloFinal = titulo ? `${titulo} — ${TITULO_BASE}` : TITULO_BASE
+  const tituloFinal = titulo ? `${titulo} | ${TITULO_BASE}` : TITULO_BASE
   const urlCanonica = `${SITE_URL}${pathname}`
   const urlImagem = `${SITE_URL}${imagem}`
 

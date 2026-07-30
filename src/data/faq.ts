@@ -14,7 +14,7 @@ export const perguntas: Pergunta[] = [
     id: 'prazo',
     pergunta: 'Quanto tempo leva para a peça ficar pronta?',
     resposta:
-      'Em média quarenta e cinco dias, do primeiro atendimento à entrega, contando as provas. Vestidos de noiva e peças com bordado manual pedem mais tempo — o ideal é procurar o atelier com três a quatro meses de antecedência.',
+      'Em média quarenta e cinco dias, do primeiro atendimento à entrega, contando as provas. Vestidos de noiva e peças com bordado manual pedem mais tempo, e o ideal é procurar o atelier com três a quatro meses de antecedência.',
   },
   {
     id: 'atendimento',
@@ -26,6 +26,6 @@ export const perguntas: Pergunta[] = [
     id: 'orcamento',
     pergunta: 'Como funciona o orçamento?',
     resposta:
-      'O valor depende do modelo, do tecido escolhido e do acabamento, então é fechado depois da primeira conversa — não existe tabela pronta. Mande uma mensagem com a referência que você tem em mente e passamos uma estimativa.',
+      'O valor depende do modelo, do tecido escolhido e do acabamento, então é fechado depois da primeira conversa. Não existe tabela pronta. Mande uma mensagem com a referência que você tem em mente e passamos uma estimativa.',
   },
 ]

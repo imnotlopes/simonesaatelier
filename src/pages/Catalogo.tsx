@@ -41,7 +41,7 @@ export default function Catalogo() {
   return (
     <section className="secao bg-off-white">
       <Seo
-        titulo={filtroAtivo ? `${rotulosCategoria[filtroAtivo]} — Catálogo` : 'Catálogo'}
+        titulo={filtroAtivo ? `${rotulosCategoria[filtroAtivo]} | Catálogo` : 'Catálogo'}
         descricao={
           filtroAtivo
             ? `Peças da categoria ${rotulosCategoria[filtroAtivo].toLowerCase()} do atelier Simone Sá, todas desenvolvidas sob medida.`

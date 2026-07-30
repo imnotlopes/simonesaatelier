@@ -31,7 +31,7 @@ export default function Peca() {
   return (
     <>
       <Seo
-        titulo={`${peca.nome} — ${rotulosCategoria[peca.categoria]}`}
+        titulo={`${peca.nome} | ${rotulosCategoria[peca.categoria]}`}
         descricao={peca.descricao}
         imagem={peca.imagens[0]}
       />

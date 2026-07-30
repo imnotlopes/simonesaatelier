@@ -39,7 +39,7 @@ export const googleNegocio = {
 
   /** TODO: ajustar conforme o funcionamento real. Deixe vazio para ocultar. */
   horarios: [
-    { dias: 'Segunda a sexta', horas: '09h — 18h' },
+    { dias: 'Segunda a sexta', horas: '09h às 18h' },
     { dias: 'Sábado', horas: 'Com hora marcada' },
     { dias: 'Domingo', horas: 'Fechado' },
   ] as Array<{ dias: string; horas: string }>,

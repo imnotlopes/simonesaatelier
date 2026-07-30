@@ -3,9 +3,8 @@ import SecaoTitulo from '../components/SecaoTitulo'
 import Seo from '../components/Seo'
 import { brand } from '../lib/brand'
 
-/** Embalagem da marca. Antes esta página reusava a foto de uma peça do
- *  catálogo, o que fazia a mesma imagem aparecer em dois contextos. */
-const IMAGEM_ATELIER = '/pecas/embalagem.webp'
+const FOTO_SIMONE = '/atelier/simone.webp'
+const FOTO_EMBALAGEM = '/atelier/embalagem.webp'
 
 const PROCESSO = [
   {
@@ -36,7 +35,7 @@ export default function Sobre() {
       <Seo
         titulo="Sobre o atelier"
         descricao="Conheça o atelier Simone Sá: modelagem construída do zero, três provas por peça e acabamento à mão. Atendimento individual com hora marcada."
-        imagem={IMAGEM_ATELIER}
+        imagem={FOTO_SIMONE}
       />
 
       {/* Abertura */}
@@ -52,15 +51,15 @@ export default function Sobre() {
             <div className="mt-8 space-y-5 text-preto/75">
               <p>
                 O atelier {brand.nome} nasceu de um incômodo simples: roupa de festa
-                raramente cabe em quem a veste. Aqui não existe tabela de tamanho —
+                raramente cabe em quem a veste. Aqui não existe tabela de tamanho:
                 existe uma modelagem construída do zero, sobre as medidas e o corpo
                 de cada cliente.
               </p>
               <p>
                 Trabalhamos com poucas peças por vez, e isso é uma escolha. Cada
                 vestido passa por três provas antes de sair, e boa parte do
-                acabamento — bainhas, aplicações, forros — é feita à mão. O que se
-                vê por dentro da peça diz tanto quanto o que se vê por fora.
+                acabamento, como bainhas, aplicações e forros, é feita à mão. O que
+                se vê por dentro da peça diz tanto quanto o que se vê por fora.
               </p>
               <p>
                 Atendemos noivas, madrinhas, debutantes e daminhas,
@@ -70,15 +69,24 @@ export default function Sobre() {
             </div>
           </div>
 
-          <div className="overflow-hidden bg-borda-sutil">
-            <img
-              src={IMAGEM_ATELIER}
-              alt="Sacolas brancas do atelier, com o monograma impresso e laço de fita preta."
-              loading="lazy"
-              decoding="async"
-              className="aspect-[4/5] w-full object-cover"
-            />
-          </div>
+          {/* Retrato da Simone: a página fala do atelier, então mostra quem
+              costura, não uma peça do catálogo. */}
+          <figure>
+            <div className="overflow-hidden bg-borda-sutil">
+              <img
+                src={FOTO_SIMONE}
+                alt="Simone Sá no atelier, de camisa branca, segurando a tesoura de alfaiate ao lado do manequim de modelagem com o monograma da marca."
+                width={1254}
+                height={1254}
+                loading="lazy"
+                decoding="async"
+                className="aspect-square w-full object-cover"
+              />
+            </div>
+            <figcaption className="mt-4 text-sm text-preto/65">
+              Simone Sá, à frente do atelier.
+            </figcaption>
+          </figure>
         </div>
       </section>
 
@@ -104,6 +112,38 @@ export default function Sobre() {
               </li>
             ))}
           </ol>
+        </div>
+      </section>
+
+      {/* Embalagem */}
+      <section className="secao bg-off-white">
+        <div className="container-luxo grid items-center gap-14 lg:grid-cols-[1.1fr_1fr] lg:gap-20">
+          <figure className="overflow-hidden bg-borda-sutil">
+            <img
+              src={FOTO_EMBALAGEM}
+              alt="Três sacolas brancas do atelier alinhadas, cada uma com o monograma Simone Sá impresso e um laço de fita preta amarrado nas alças."
+              loading="lazy"
+              decoding="async"
+              className="aspect-[4/3] w-full object-cover"
+            />
+          </figure>
+
+          <div>
+            <SecaoTitulo eyebrow="A entrega" titulo="Como a peça chega até você" />
+
+            <div className="mt-8 space-y-5 text-preto/75">
+              <p>
+                A peça sai do atelier passada, protegida em papel de seda e embalada
+                na sacola da casa, fechada com laço de fita preta. Junto vai a
+                instrução de conservação do tecido, escrita para aquela peça.
+              </p>
+              <p>
+                Não é enfeite: o vestido costuma ficar guardado semanas até o dia do
+                evento, e sair daqui já embalado do jeito certo é o que garante que
+                ele chegue ao evento como saiu da última prova.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 

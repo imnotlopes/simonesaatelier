@@ -33,7 +33,7 @@ export const brand = {
 } as const
 
 /** Título usado como sufixo em todas as páginas. */
-export const TITULO_BASE = 'Simone Sá Atelier — Alta-costura sob medida'
+export const TITULO_BASE = 'Simone Sá Atelier | Alta-costura sob medida'
 
 /**
  * TODO: trocar pelo domínio real após o deploy.

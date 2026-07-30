@@ -114,8 +114,8 @@ function Avaliacoes() {
 
 function MapaEInformacoes() {
   // Cidade e endereço ainda não preenchidos: monta só com o que existe,
-  // em vez de exibir " — MG" solto.
-  const local = [googleNegocio.cidade, googleNegocio.estado].filter(Boolean).join(' — ')
+  // em vez de exibir ", MG" solto.
+  const local = [googleNegocio.cidade, googleNegocio.estado].filter(Boolean).join(', ')
   const enderecoCompleto = [googleNegocio.endereco, local].filter(Boolean).join(', ')
 
   return (

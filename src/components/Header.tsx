@@ -49,7 +49,7 @@ export default function Header() {
         <NavLink
           to="/"
           className="group flex min-w-0 items-center gap-3 leading-none sm:gap-4"
-          aria-label={`${brand.nome} — ${brand.subtitulo}, página inicial`}
+          aria-label={`${brand.nome}, ${brand.subtitulo}, página inicial`}
         >
           <img
             src="/logo-simbolo.webp"

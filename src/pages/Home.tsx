@@ -82,7 +82,7 @@ export default function Home() {
           <SecaoTitulo
             eyebrow="O que fazemos"
             titulo="Categorias"
-            descricao="Do vestido de noiva ao traje de festa — cada ocasião pede uma construção diferente."
+            descricao="Do vestido de noiva ao traje de festa, cada ocasião pede uma construção diferente."
             centralizado
           />
 
@@ -207,7 +207,7 @@ export default function Home() {
           <span className="filete mt-6" />
 
           <p className="mt-6 max-w-md text-preto/70">
-            Bastidores, tecidos chegando e peças saindo — o dia a dia do atelier
+            Bastidores, tecidos chegando e peças saindo. O dia a dia do atelier
             está no Instagram.
           </p>
 
