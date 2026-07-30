@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import BotaoWhatsapp from '../components/BotaoWhatsapp'
 import CardPeca from '../components/CardPeca'
 import SecaoCasamentos from '../components/SecaoCasamentos'
+import SecaoManifesto from '../components/SecaoManifesto'
 import SecaoTitulo from '../components/SecaoTitulo'
 import SecaoYoutube from '../components/SecaoYoutube'
 import Seo from '../components/Seo'
@@ -75,7 +76,12 @@ export default function Home() {
       </section>
 
       {/* ------------------------------------------------------------------ */}
-      {/* 2 · Categorias                                                      */}
+      {/* 2 · Manifesto                                                       */}
+      {/* ------------------------------------------------------------------ */}
+      <SecaoManifesto />
+
+      {/* ------------------------------------------------------------------ */}
+      {/* 3 · Categorias                                                      */}
       {/* ------------------------------------------------------------------ */}
       <section className="secao bg-off-white">
         <div className="container-luxo">
@@ -113,7 +119,7 @@ export default function Home() {
       </section>
 
       {/* ------------------------------------------------------------------ */}
-      {/* 3 · Peças em destaque                                               */}
+      {/* 4 · Peças em destaque                                               */}
       {/* ------------------------------------------------------------------ */}
       <section className="secao bg-branco">
         <div className="container-luxo">
@@ -140,12 +146,12 @@ export default function Home() {
       </section>
 
       {/* ------------------------------------------------------------------ */}
-      {/* 4 · Casamentos                                                      */}
+      {/* 5 · Casamentos                                                      */}
       {/* ------------------------------------------------------------------ */}
       <SecaoCasamentos />
 
       {/* ------------------------------------------------------------------ */}
-      {/* 5 · Faixa sob medida                                                */}
+      {/* 6 · Faixa sob medida                                                */}
       {/* ------------------------------------------------------------------ */}
       {/* Bloco invertido: é o pico de contraste da página, no lugar onde
           antes havia a faixa dourada. */}
@@ -192,12 +198,12 @@ export default function Home() {
       </section>
 
       {/* ------------------------------------------------------------------ */}
-      {/* 6 · YouTube (some sozinha enquanto não houver vídeo cadastrado)     */}
+      {/* 7 · YouTube (some sozinha enquanto não houver vídeo cadastrado)     */}
       {/* ------------------------------------------------------------------ */}
       <SecaoYoutube />
 
       {/* ------------------------------------------------------------------ */}
-      {/* 7 · Instagram                                                       */}
+      {/* 8 · Instagram                                                       */}
       {/* ------------------------------------------------------------------ */}
       <section className="secao bg-branco">
         <div className="container-luxo flex flex-col items-center text-center">
