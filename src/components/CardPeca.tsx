@@ -29,9 +29,7 @@ export default function CardPeca({ peca, prioridade = false, className }: CardPe
         <h3 className="mt-2 text-h4 uppercase tracking-luxo transition-colors duration-300 ease-suave group-hover:text-cinza">
           {peca.nome}
         </h3>
-        {peca.tecido && (
-          <p className="mt-1 text-sm capitalize text-preto/65">{peca.tecido}</p>
-        )}
+        <p className="mt-1 text-sm text-preto/65">{peca.descricao}</p>
       </div>
     </Link>
   )

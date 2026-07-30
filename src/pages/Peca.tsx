@@ -13,9 +13,17 @@ import {
   type Peca as TipoPeca,
 } from '../data/pecas'
 
-/** Todo o catálogo é sob medida, então a mensagem é sempre de orçamento. */
+/**
+ * Todo o catálogo é sob medida, então a mensagem é sempre de orçamento.
+ *
+ * O nome da peça é o da cliente que a vestiu, então a frase é montada para
+ * funcionar nos dois casos: "a peça Isabella (Debutante, Estilo Mullet)" e
+ * também as que ainda estão com título descritivo. Categoria e estilo entram
+ * entre parênteses para a Simone identificar o vestido na primeira linha.
+ */
 function mensagemDaPeca(peca: TipoPeca) {
-  return `Olá! Tenho interesse na peça ${peca.nome}. Gostaria de um orçamento sob medida.`
+  const contexto = `${rotulosCategoria[peca.categoria]}, ${peca.descricao}`
+  return `Olá! Vi no site a peça ${peca.nome} (${contexto}) e gostaria de um orçamento sob medida.`
 }
 
 export default function Peca() {
@@ -32,7 +40,11 @@ export default function Peca() {
     <>
       <Seo
         titulo={`${peca.nome} | ${rotulosCategoria[peca.categoria]}`}
-        descricao={peca.descricao}
+        /* A descrição da peça é só o estilo, curto demais para meta tag.
+           Aqui ela entra numa frase que dá contexto ao buscador. */
+        descricao={`${peca.descricao}. Peça de ${rotulosCategoria[
+          peca.categoria
+        ].toLowerCase()} desenvolvida sob medida no atelier Simone Sá, com modelagem própria e provas no atelier.`}
         imagem={peca.imagens[0]}
       />
 
@@ -58,16 +70,11 @@ export default function Peca() {
               <h1 className="mt-4 uppercase tracking-luxo">{peca.nome}</h1>
               <span className="filete mt-6" />
 
-              <p className="mt-8 text-preto/75">{peca.descricao}</p>
-
-              {peca.tecido && (
-                <dl className="mt-10 border-t border-borda-sutil pt-6">
-                  <dt className="font-display text-h6 uppercase tracking-luxo text-preto/65">
-                    Tecido
-                  </dt>
-                  <dd className="mt-2 capitalize text-preto">{peca.tecido}</dd>
-                </dl>
-              )}
+              {/* A descrição é o estilo, em uma linha. Ganha peso de destaque
+                  porque é a única informação sobre a peça. */}
+              <p className="mt-8 font-display text-h4 font-light text-preto/75">
+                {peca.descricao}
+              </p>
 
               <div className="mt-10 border-l-2 border-preto bg-branco p-7">
                 <p className="font-display text-h5 uppercase tracking-luxo text-preto">

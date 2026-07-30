@@ -5,20 +5,15 @@ import { brand } from '../lib/brand'
 import { Estrelas } from './IconeEstrela'
 import SecaoTitulo from './SecaoTitulo'
 
-export default function SecaoGoogle() {
-  return (
-    <>
-      <Avaliacoes />
-      <MapaEInformacoes />
-    </>
-  )
-}
-
 /* -------------------------------------------------------------------------- */
 /* Avaliações                                                                  */
 /* -------------------------------------------------------------------------- */
 
-function Avaliacoes() {
+/**
+ * Avaliações e mapa são exportados separados porque não ficam lado a lado:
+ * a FAQ entra entre os dois. Ver a ordem em components/Layout.tsx.
+ */
+export default function SecaoAvaliacoes() {
   return (
     <section className="secao bg-branco">
       <div className="container-luxo">
@@ -112,14 +107,20 @@ function Avaliacoes() {
 /* Mapa e informações                                                          */
 /* -------------------------------------------------------------------------- */
 
-function MapaEInformacoes() {
+export function SecaoMapa() {
   // Cidade e endereço ainda não preenchidos: monta só com o que existe,
   // em vez de exibir ", MG" solto.
   const local = [googleNegocio.cidade, googleNegocio.estado].filter(Boolean).join(', ')
   const enderecoCompleto = [googleNegocio.endereco, local].filter(Boolean).join(', ')
 
   return (
-    <section className="secao bg-off-white">
+    /*
+      Última seção antes do rodapé, então vai sem espaçamento embaixo: o
+      rodapé já tem o seu (py-16/py-20). Com os dois, sobrava uma faixa de
+      branco colada no rodapé preto, que variava com a largura da tela porque
+      --espaco-secao é um clamp.
+    */
+    <section className="secao bg-branco pb-0">
       <div className="container-luxo">
         <SecaoTitulo eyebrow="Onde estamos" titulo="Visite o atelier" centralizado />
 

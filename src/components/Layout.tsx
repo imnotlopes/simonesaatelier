@@ -6,7 +6,7 @@ import FloatWhatsapp from './FloatWhatsapp'
 import Footer from './Footer'
 import Header from './Header'
 import ScrollToTop from './ScrollToTop'
-import SecaoGoogle from './SecaoGoogle'
+import SecaoAvaliacoes, { SecaoMapa } from './SecaoGoogle'
 
 /** Reserva altura durante o carregamento do chunk, para o rodapé não saltar. */
 function Carregando() {
@@ -30,9 +30,11 @@ export default function Layout() {
           <Outlet />
         </Suspense>
 
-        {/* Prova social, localização e dúvidas: fecham toda página do site. */}
-        <SecaoGoogle />
+        {/* Fecham toda página do site, nesta ordem: prova social, dúvidas e,
+            por último, onde encontrar o atelier. */}
+        <SecaoAvaliacoes />
         <Faq />
+        <SecaoMapa />
       </main>
 
       <Footer />
