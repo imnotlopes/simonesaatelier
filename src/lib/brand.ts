@@ -23,12 +23,11 @@ export const brand = {
   instagram: '@simonesaatelier',
 
   /** Formato internacional, apenas dígitos: 55 + DDD + número. */
-  whatsapp: '5511999999999',
+  whatsapp: '5531988843406',
   /** Mesmo número, formatado para leitura. */
-  whatsappExibicao: '(11) 99999-9999',
+  whatsappExibicao: '(31) 98884-3406',
 
-  /** TODO: preencher (opcionais — deixe vazio para ocultar no rodapé). */
-  cidade: '',
+  cidade: 'Timóteo, MG',
   email: '',
 } as const
 
