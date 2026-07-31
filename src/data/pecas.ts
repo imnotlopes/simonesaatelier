@@ -42,9 +42,9 @@ export const rotulosCategoria: Record<CategoriaPeca, string> = {
  * Nome e estilo vêm dos próprios arquivos de imagem, nomeados pela Simone no
  * padrão `cliente-estilo`. Todas as peças estão identificadas.
  *
- * Quatro estilos não vieram dela e foram escritos aqui, porque os arquivos
- * de Geovana, Ellen, Antônio Miguel e Henrique trazem só o nome: vale
- * conferir se descrevem o que ela diria.
+ * Três estilos não vieram dela e foram escritos aqui, porque os arquivos
+ * de Geovana, Antônio Miguel e Henrique trazem só o nome: vale conferir se
+ * descrevem o que ela diria.
  */
 export const pecas: Peca[] = [
   /* ---------------------------------------------------------------- noiva */
@@ -205,7 +205,7 @@ export const pecas: Peca[] = [
     slug: 'festa-ellen',
     nome: 'Ellen',
     categoria: 'festa',
-    descricao: 'Clássico e Romântico',
+    descricao: 'Clássico, Romântico e Dramático',
     imagens: ['/pecas/ellen.webp', '/pecas/ellen2.webp', '/pecas/ellen3.webp'],
   },
 
