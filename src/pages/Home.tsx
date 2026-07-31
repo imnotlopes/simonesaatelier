@@ -23,7 +23,7 @@ const PASSOS_SOB_MEDIDA = [
 export default function Home() {
   return (
     <>
-      <Seo descricao="Atelier de costura sob medida: vestidos de noiva, festa, debutante e infantil. Modelagem própria, provas no atelier e acabamento feito à mão." />
+      <Seo descricao="Atelier de costura sob medida em Timóteo, MG: vestidos de noiva, festa, debutante e infantil. Modelagem própria, provas no atelier e acabamento feito à mão." />
 
       {/* ------------------------------------------------------------------ */}
       {/* 1 · Hero                                                            */}

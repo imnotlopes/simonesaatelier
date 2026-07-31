@@ -122,10 +122,11 @@ export default function SecaoAvaliacoes() {
 /* -------------------------------------------------------------------------- */
 
 export function SecaoMapa() {
-  // Cidade e endereço ainda não preenchidos: monta só com o que existe,
-  // em vez de exibir ", MG" solto.
+  // Monta só com o que estiver preenchido, para nunca sobrar ", MG" solto.
   const local = [googleNegocio.cidade, googleNegocio.estado].filter(Boolean).join(', ')
-  const enderecoCompleto = [googleNegocio.endereco, local].filter(Boolean).join(', ')
+  const enderecoCompleto = [googleNegocio.endereco, local, googleNegocio.cep]
+    .filter(Boolean)
+    .join(', ')
 
   return (
     /*

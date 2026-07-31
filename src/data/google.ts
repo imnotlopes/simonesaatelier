@@ -7,41 +7,34 @@
 export const googleNegocio = {
   nome: 'Simone Sá Atelier',
 
-  /** TODO: endereço completo, como aparece no Google. */
-  endereco: '',
-  /**
-   * TODO: confirmar a cidade.
-   * Duas avaliações citam o Vale do Aço, o que aponta para Ipatinga, Timóteo
-   * ou Coronel Fabriciano — não Belo Horizonte, ainda que o DDD 31 cubra as
-   * duas regiões.
-   */
-  cidade: '',
+  endereco: 'R. Santa Catarina, 620, Timotinho',
+  cidade: 'Timóteo',
   estado: 'MG',
+  cep: '35180-476',
 
-  /** 20 avaliações, todas 5 estrelas. */
+  /**
+   * Nota e total como constam no perfil. O carrossel mostra as 20 avaliações
+   * transcritas até agora, que são uma seleção do total.
+   */
   nota: 5,
-  totalAvaliacoes: 20,
+  totalAvaliacoes: 54,
 
   /** Link do perfil — usado nos botões "ver no Google" e "como chegar". */
   url: 'https://share.google/VhzpX0ojnGr80s6zZ',
 
   /**
-   * TODO: trocar pelo embed exato do seu perfil.
-   *
-   * Abra o Google Maps, encontre o atelier, clique em Compartilhar →
-   * Incorporar um mapa, e cole aqui só a URL que está dentro do src="...".
-   *
-   * Enquanto isso o mapa busca pelo nome do atelier, então o pin pode cair
-   * no lugar errado. Confira antes de divulgar o site.
+   * Busca pelo endereço completo, e não pelo nome, para o pin cair no lugar
+   * certo mesmo que o perfil mude de nome.
    */
   mapaEmbed:
-    'https://www.google.com/maps?q=Simone+S%C3%A1+Atelier+MG&output=embed',
+    'https://www.google.com/maps?q=' +
+    encodeURIComponent('R. Santa Catarina, 620, Timotinho, Timóteo - MG, 35180-476') +
+    '&output=embed',
 
-  /** TODO: ajustar conforme o funcionamento real. Deixe vazio para ocultar. */
+  /** Conforme o perfil no Google. Deixe vazio para ocultar o bloco. */
   horarios: [
-    { dias: 'Segunda a sexta', horas: '09h às 18h' },
-    { dias: 'Sábado', horas: 'Com hora marcada' },
-    { dias: 'Domingo', horas: 'Fechado' },
+    { dias: 'Segunda a sexta', horas: '09h às 17h' },
+    { dias: 'Sábado e domingo', horas: 'Fechado' },
   ] as Array<{ dias: string; horas: string }>,
 }
 

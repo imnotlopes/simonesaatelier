@@ -34,7 +34,7 @@ export default function Sobre() {
     <>
       <Seo
         titulo="Sobre o atelier"
-        descricao="Conheça o atelier Simone Sá: modelagem construída do zero, três provas por peça e acabamento à mão. Atendimento individual com hora marcada."
+        descricao="Conheça o atelier Simone Sá, em Timóteo, MG: modelagem construída do zero, três provas por peça e acabamento à mão. Atendimento individual com hora marcada."
         imagem={FOTO_SIMONE}
       />
 
