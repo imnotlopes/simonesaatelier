@@ -40,8 +40,11 @@ export const rotulosCategoria: Record<CategoriaPeca, string> = {
  * Catálogo. Todo ele é sob medida: não há peça pronta.
  *
  * Nome e estilo vêm dos próprios arquivos de imagem, nomeados pela Simone no
- * padrão `cliente-estilo`. Quatro peças ainda estão sem cliente identificada e
- * seguem marcadas com "TODO": basta trocar o campo `nome` quando souber.
+ * padrão `cliente-estilo`. Todas as peças estão identificadas.
+ *
+ * Quatro estilos não vieram dela e foram escritos aqui, porque os arquivos
+ * de Geovana, Ellen, Antônio Miguel e Henrique trazem só o nome: vale
+ * conferir se descrevem o que ela diria.
  */
 export const pecas: Peca[] = [
   /* ---------------------------------------------------------------- noiva */
@@ -180,15 +183,14 @@ export const pecas: Peca[] = [
     ],
   },
   {
-    slug: 'festa-curto-laco',
-    // TODO: nome da cliente
-    nome: 'Vestido curto com laço',
+    slug: 'festa-geovana',
+    nome: 'Geovana',
     categoria: 'festa',
     descricao: 'Moderno e Romântico',
     imagens: [
-      '/pecas/festa-pink-laco-1.webp',
-      '/pecas/festa-pink-laco-2.webp',
-      '/pecas/festa-pink-laco-3.webp',
+      '/pecas/geovana.webp',
+      '/pecas/geovana2.webp',
+      '/pecas/geovana3.webp',
     ],
   },
 
@@ -235,36 +237,29 @@ export const pecas: Peca[] = [
     destaque: true,
   },
   {
-    slug: 'infantil-daminha-cetim',
-    // TODO: nome da criança
-    nome: 'Vestido de daminha',
+    slug: 'infantil-ellen',
+    nome: 'Ellen',
     categoria: 'infantil',
     descricao: 'Clássico e Romântico',
-    imagens: [
-      '/pecas/infantil-daminha-cetim-1.webp',
-      '/pecas/infantil-daminha-cetim-2.webp',
-      '/pecas/infantil-daminha-cetim-3.webp',
-    ],
+    imagens: ['/pecas/ellen.webp', '/pecas/ellen2.webp', '/pecas/ellen3.webp'],
   },
   {
-    slug: 'infantil-jardineira',
-    // TODO: nome da criança
-    nome: 'Conjunto com jardineira',
+    slug: 'infantil-antonio-miguel',
+    nome: 'Antônio Miguel',
     categoria: 'infantil',
     descricao: 'Clássico e Confortável',
     imagens: [
-      '/pecas/infantil-menino-jardineira-1.webp',
-      '/pecas/infantil-menino-jardineira-2.webp',
-      '/pecas/infantil-menino-jardineira-3.webp',
+      '/pecas/antonio-miguel.webp',
+      '/pecas/antonio-miguel2.webp',
+      '/pecas/antonio-miguel3.webp',
     ],
   },
   {
-    slug: 'infantil-fraque',
-    // TODO: nome da criança
-    nome: 'Fraque infantil',
+    slug: 'infantil-henrique',
+    nome: 'Henrique',
     categoria: 'infantil',
     descricao: 'Clássico e Temático',
-    imagens: ['/pecas/infantil-menino-fraque.webp'],
+    imagens: ['/pecas/henrique.webp'],
   },
 
   /* ----------------------------------------------------------- sob medida */

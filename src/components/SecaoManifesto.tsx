@@ -45,7 +45,7 @@ export default function SecaoManifesto() {
           </p>
 
           <cite className="mt-10 block font-display text-h6 uppercase not-italic tracking-luxo text-cinza">
-            {brand.nome}, {brand.subtitulo}
+            {brand.nome} {brand.subtitulo}
           </cite>
         </blockquote>
       </div>
