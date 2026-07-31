@@ -53,7 +53,21 @@ export const pecas: Peca[] = [
     nome: 'Kelly',
     categoria: 'noiva',
     descricao: 'Romântico, Minimalista e Contemporâneo',
-    imagens: ['/pecas/kelly-romantico-minimalista-e-contemporaneo.webp'],
+    imagens: [
+      '/pecas/kelly-romantico-minimalista-e-contemporaneo.webp',
+      '/pecas/kelly-romantico-minimalista-e-contemporaneo2.webp',
+    ],
+    destaque: true,
+  },
+  {
+    slug: 'noiva-richelli',
+    nome: 'Richelli',
+    categoria: 'noiva',
+    descricao: 'Romântico e Moderno',
+    imagens: [
+      '/pecas/richelli-romantico-e-moderno.webp',
+      '/pecas/richelli-romantico-e-moderno2.webp',
+    ],
     destaque: true,
   },
   {
@@ -61,7 +75,12 @@ export const pecas: Peca[] = [
     nome: 'Gláucia',
     categoria: 'noiva',
     descricao: 'Minimalista, Romântico e Fluido',
-    imagens: ['/pecas/glaucia-minimalista-romantico-e-fluido.webp'],
+    imagens: [
+      '/pecas/glaucia-minimalista-romantico-e-fluido.webp',
+      '/pecas/glaucia-minimalista-romantico-e-fluido2.webp',
+      '/pecas/glaucia-minimalista-romantico-e-fluido3.webp',
+      '/pecas/glaucia-e-augusto.webp',
+    ],
   },
   {
     slug: 'noiva-isabella',
@@ -222,6 +241,13 @@ export const pecas: Peca[] = [
     descricao: 'Estilo Mullet',
     imagens: ['/pecas/isabella-estilo-mullet.webp'],
   },
+  {
+    slug: 'debutante-ellen',
+    nome: 'Ellen',
+    categoria: 'debutante',
+    descricao: 'Clássico e Romântico',
+    imagens: ['/pecas/ellen.webp', '/pecas/ellen2.webp', '/pecas/ellen3.webp'],
+  },
 
   /* ------------------------------------------------------------- infantil */
   {
@@ -235,13 +261,6 @@ export const pecas: Peca[] = [
       '/pecas/isis-romantico2.webp',
     ],
     destaque: true,
-  },
-  {
-    slug: 'infantil-ellen',
-    nome: 'Ellen',
-    categoria: 'infantil',
-    descricao: 'Clássico e Romântico',
-    imagens: ['/pecas/ellen.webp', '/pecas/ellen2.webp', '/pecas/ellen3.webp'],
   },
   {
     slug: 'infantil-antonio-miguel',

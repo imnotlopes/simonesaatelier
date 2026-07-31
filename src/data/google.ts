@@ -18,9 +18,9 @@ export const googleNegocio = {
   cidade: '',
   estado: 'MG',
 
-  /** 19 avaliações, todas 5 estrelas. */
+  /** 20 avaliações, todas 5 estrelas. */
   nota: 5,
-  totalAvaliacoes: 19,
+  totalAvaliacoes: 20,
 
   /** Link do perfil — usado nos botões "ver no Google" e "como chegar". */
   url: 'https://share.google/VhzpX0ojnGr80s6zZ',
@@ -65,6 +65,19 @@ export interface AvaliacaoGoogle {
  * Erros de digitação do original foram mantidos de propósito.
  */
 export const avaliacoesGoogle: AvaliacaoGoogle[] = [
+  {
+    /*
+      Abre o carrossel: é a avaliação que mais prova o ponto do atelier.
+      Vestido feito à distância, com as medidas tiradas por chamada de vídeo
+      dos Estados Unidos, e serviu na primeira vez que a cliente vestiu.
+    */
+    id: 'adilson-silva',
+    autor: 'Adilson Silva',
+    nota: 5,
+    quando: 'um ano atrás',
+    texto:
+      'Simone Sá é a profissional dos sonhos! Acreditem, se quiserem, que ela e eu trabalhamos nesse projeto maravilhoso À LONGA DISTÂNCIA, pois eu moro nos EUA! Meu marido tirou minhas medidas através enquanto a Simone estava em chamada de vídeo, nos guiando. Esse vestido foi para o casamento de uma filha do coração. Durante meses fomos conversando, ela fazendo ajustes de lá, e eu só orando daqui hahaha. Enfim, quando meu marido trouxe o vestido, e eu experimentei, QUASE não acreditei na perfeição com que ele serviu! Simone Sá é ALTA COSTURA, podem crer! Os detalhes no vestido encantaram a todos. Não vejo a hora de ter outra obra de arte dessas feita pela Simone. Obrigada, minha querida! Espero poder te conhecer em breve! ;)',
+  },
   {
     id: 'kenia-andrade',
     autor: 'Kenia Andrade',
