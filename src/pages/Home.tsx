@@ -92,7 +92,9 @@ export default function Home() {
             centralizado
           />
 
-          <ul className="mt-14 grid grid-cols-2 gap-x-5 gap-y-10 md:grid-cols-4 lg:gap-x-6">
+          {/* Cinco categorias: 5 colunas no desktop deixam tudo em uma linha
+              só; abaixo disso quebra em 3 e depois em 2. */}
+          <ul className="mt-14 grid grid-cols-2 gap-x-5 gap-y-10 sm:grid-cols-3 lg:grid-cols-5 lg:gap-x-6">
             {categoriasVitrine.map(({ categoria, rotulo, capa, quantidade }) => (
               <li key={categoria}>
                 <Link to={`/catalogo?categoria=${categoria}`} className="group block">

@@ -3,7 +3,7 @@ export type CategoriaPeca =
   | 'festa'
   | 'debutante'
   | 'infantil'
-  | 'sob-medida'
+  | 'casual'
 
 export interface Peca {
   slug: string
@@ -33,7 +33,7 @@ export const rotulosCategoria: Record<CategoriaPeca, string> = {
   festa: 'Festa',
   debutante: 'Debutante',
   infantil: 'Infantil',
-  'sob-medida': 'Sob medida',
+  casual: 'Casual',
 }
 
 /**
@@ -130,6 +130,13 @@ export const pecas: Peca[] = [
       '/pecas/marcia-formal-e-classico.webp',
       '/pecas/marcia-formal-e-classico1.webp',
     ],
+  },
+  {
+    slug: 'festa-marcia-classico-e-elegante',
+    nome: 'Márcia',
+    categoria: 'festa',
+    descricao: 'Clássico e Elegante',
+    imagens: ['/pecas/marcia-classico-e-elegante.webp'],
   },
   {
     slug: 'festa-junia',
@@ -281,14 +288,23 @@ export const pecas: Peca[] = [
     imagens: ['/pecas/henrique.webp'],
   },
 
-  /* ----------------------------------------------------------- sob medida */
+  /* --------------------------------------------------------------- casual */
   {
-    slug: 'sob-medida-marli',
+    slug: 'casual-marli',
     nome: 'Marli',
-    categoria: 'sob-medida',
+    categoria: 'casual',
     descricao: 'Elegante e Sofisticado',
     imagens: ['/pecas/marli-elegante-e-sofisticado.webp'],
     destaque: true,
+  },
+  {
+    // TODO: a cliente ainda não foi identificada. Quando o nome vier, trocar
+    // `nome` e renomear a imagem para o padrão `cliente-estilo`.
+    slug: 'casual-conjunto-camisaria',
+    nome: 'Conjunto camisaria',
+    categoria: 'casual',
+    descricao: 'Casual e Confortável',
+    imagens: ['/pecas/conjunto-camisaria.webp'],
   },
 ]
 
@@ -310,16 +326,19 @@ export function pecasPorCategoria(categoria: CategoriaPeca): Peca[] {
 
 /**
  * Categorias para a vitrine da home, já com capa e contagem.
- * "sob-medida" fica de fora: tem faixa própria na home.
+ *
+ * Todas entram. Antes havia uma exceção, "sob-medida", que ficava de fora
+ * por não ser um tipo de peça e sim o método da casa, que já tem faixa
+ * própria na home. Essa categoria virou "casual", que é peça como as
+ * outras, então a exceção deixou de fazer sentido. A faixa sob medida
+ * continua na home, falando do método.
  */
-export const categoriasVitrine = categoriasDisponiveis
-  .filter((categoria) => categoria !== 'sob-medida')
-  .map((categoria) => {
-    const doGrupo = pecasPorCategoria(categoria)
-    return {
-      categoria,
-      rotulo: rotulosCategoria[categoria],
-      capa: doGrupo[0].imagens[0],
-      quantidade: doGrupo.length,
-    }
-  })
+export const categoriasVitrine = categoriasDisponiveis.map((categoria) => {
+  const doGrupo = pecasPorCategoria(categoria)
+  return {
+    categoria,
+    rotulo: rotulosCategoria[categoria],
+    capa: doGrupo[0].imagens[0],
+    quantidade: doGrupo.length,
+  }
+})

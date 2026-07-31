@@ -45,7 +45,7 @@ export default function Catalogo() {
         descricao={
           filtroAtivo
             ? `Peças da categoria ${rotulosCategoria[filtroAtivo].toLowerCase()} do atelier Simone Sá, todas desenvolvidas sob medida.`
-            : 'Catálogo completo do atelier Simone Sá: vestidos de noiva, festa, debutante, infantil e alfaiataria sob medida.'
+            : 'Catálogo completo do atelier Simone Sá, em Timóteo, MG: vestidos de noiva, festa, debutante e infantil, além de peças casuais, todas sob medida.'
         }
         imagem={listadas[0]?.imagens[0]}
       />
