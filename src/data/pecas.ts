@@ -198,19 +198,15 @@ export const pecas: Peca[] = [
     descricao: 'Romântico e Sofisticado',
     imagens: [
       '/pecas/carla-romantico-e-sofisticado.webp',
-      '/pecas/festa-terracota-flores.webp',
+      '/pecas/carla-romantico-e-sofisticado2.webp',
     ],
   },
   {
-    slug: 'festa-geovana',
-    nome: 'Geovana',
+    slug: 'festa-ellen',
+    nome: 'Ellen',
     categoria: 'festa',
-    descricao: 'Moderno e Romântico',
-    imagens: [
-      '/pecas/geovana.webp',
-      '/pecas/geovana2.webp',
-      '/pecas/geovana3.webp',
-    ],
+    descricao: 'Clássico e Romântico',
+    imagens: ['/pecas/ellen.webp', '/pecas/ellen2.webp', '/pecas/ellen3.webp'],
   },
 
   /* ------------------------------------------------------------ debutante */
@@ -241,13 +237,6 @@ export const pecas: Peca[] = [
     descricao: 'Estilo Mullet',
     imagens: ['/pecas/isabella-estilo-mullet.webp'],
   },
-  {
-    slug: 'debutante-ellen',
-    nome: 'Ellen',
-    categoria: 'debutante',
-    descricao: 'Clássico e Romântico',
-    imagens: ['/pecas/ellen.webp', '/pecas/ellen2.webp', '/pecas/ellen3.webp'],
-  },
 
   /* ------------------------------------------------------------- infantil */
   {
@@ -261,6 +250,17 @@ export const pecas: Peca[] = [
       '/pecas/isis-romantico2.webp',
     ],
     destaque: true,
+  },
+  {
+    slug: 'infantil-geovana',
+    nome: 'Geovana',
+    categoria: 'infantil',
+    descricao: 'Moderno e Romântico',
+    imagens: [
+      '/pecas/geovana.webp',
+      '/pecas/geovana2.webp',
+      '/pecas/geovana3.webp',
+    ],
   },
   {
     slug: 'infantil-antonio-miguel',
