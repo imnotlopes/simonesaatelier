@@ -298,13 +298,11 @@ export const pecas: Peca[] = [
     destaque: true,
   },
   {
-    // TODO: a cliente ainda não foi identificada. Quando o nome vier, trocar
-    // `nome` e renomear a imagem para o padrão `cliente-estilo`.
-    slug: 'casual-conjunto-camisaria',
-    nome: 'Conjunto camisaria',
+    slug: 'casual-maria-lucia',
+    nome: 'Maria Lúcia',
     categoria: 'casual',
-    descricao: 'Casual e Confortável',
-    imagens: ['/pecas/conjunto-camisaria.webp'],
+    descricao: 'Elegante, Atemporal e Minimalista',
+    imagens: ['/pecas/maria-lucia-elegante-atemporal-e-minimalista.webp'],
   },
 ]
 
