@@ -215,6 +215,16 @@ export const pecas: Peca[] = [
     descricao: 'Clássico, Romântico e Dramático',
     imagens: ['/pecas/ellen.webp', '/pecas/ellen2.webp', '/pecas/ellen3.webp'],
   },
+  {
+    slug: 'festa-maria-alice',
+    nome: 'Maria Alice',
+    categoria: 'festa',
+    descricao: 'Romântico, Fluido e Minimalista',
+    imagens: [
+      '/pecas/maria-alice-romantico-fluido-e-minimalista.webp',
+      '/pecas/maria-alice-romantico-fluido-e-minimalista2.webp',
+    ],
+  },
 
   /* ------------------------------------------------------------ debutante */
   {
